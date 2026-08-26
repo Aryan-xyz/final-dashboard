@@ -1,0 +1,2751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>skill100 | Grade 11 Biology - Chemical Coordination &amp; Integration</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Icons & KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.q `11net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+
+  <style>
+    :root {
+      --cell-primary: #4f46e5;
+      --cell-teal: #0d9488;
+      --cell-indigo: #4f46e5;
+      --cell-violet: #7c3aed;
+      --cell-blue: #2563eb;
+      --cell-text: #0f172a;
+      --cell-muted: #64748b;
+      --cell-card: #ffffff;
+      --cell-border: #e2e8f0;
+      --cell-success: #10b981;
+      --cell-wrong: #ef4444;
+      --cell-red: #ef4444;
+      --cell-r: 14px;
+      --cell-rlg: 20px;
+      --cell-sh: 0 4px 20px rgba(0, 0, 0, .09);
+      --cell-shlg: 0 12px 40px rgba(0, 0, 0, .14);
+      --skill-color: #4f46e5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: #f8fafc;
+      color: var(--cell-text);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Views visibility */
+    .app-view {
+      display: none;
+    }
+    .app-view.active {
+      display: block;
+    }
+
+    /* Fullpage Dashboard Layout */
+    .cell-fullpage {
+      display: flex;
+      min-height: 100vh;
+      overflow: hidden;
+      background: #f1f5f9;
+    }
+    .cell-left {
+      position: relative;
+      flex: 0 0 46%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 48px 48px 56px;
+      overflow: hidden;
+      background: linear-gradient(145deg, #1e1b4b, #312e81, #4338ca, #581c87, #4c1d95);
+    }
+    .cell-deco {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .cell-deco-a {
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
+      top: -80px;
+      left: -80px;
+    }
+    .cell-deco-b {
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(167, 139, 250, 0.25) 0%, transparent 70%);
+      bottom: -60px;
+      right: -40px;
+    }
+    .cell-left-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+    .cell-main-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2.6rem, 4.2vw, 3.8rem);
+      font-weight: 900;
+      line-height: 1.08;
+      color: #fff;
+      margin: 0 0 20px;
+      letter-spacing: -.02em;
+    }
+    .cell-title-accent {
+      background: linear-gradient(90deg, #818cf8, #a5f3fc, #fef9c3 80%, #fde68a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .cell-main-sub {
+      font-size: clamp(.9rem, 1.3vw, 1.05rem);
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.75;
+      max-width: 440px;
+      margin: 0 0 36px;
+      font-weight: 400;
+    }
+    .cell-stats-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .cell-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.12);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 14px;
+      padding: 14px 20px;
+      min-width: 90px;
+      transition: transform .2s ease, background .2s ease;
+    }
+    .cell-stat:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.18);
+    }
+    .cell-stat-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    .cell-stat-lbl {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      color: rgba(255, 255, 255, 0.75);
+      margin-top: 5px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .cell-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 40px 40px 40px 36px;
+      background: #f8fafc;
+    }
+    .cell-right-eyebrow {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--cell-indigo);
+      margin: 0 0 20px 4px;
+    }
+    .cell-cards-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+    }
+    .cell-card-btn {
+      appearance: none;
+      -webkit-appearance: none;
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      border: 1px solid var(--cell-border);
+      border-radius: var(--cell-rlg);
+      overflow: hidden;
+      cursor: pointer;
+      text-align: left;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      transition: all .25s cubic-bezier(.34, 1.56, .64, 1);
+      position: relative;
+      min-height: 94px;
+      box-sizing: border-box;
+      outline: none;
+      text-decoration: none;
+      font-family: inherit;
+    }
+    .cell-card-btn:hover {
+      transform: translateX(6px);
+      box-shadow: 0 8px 24px rgba(79, 70, 229, 0.12);
+      border-color: rgba(79, 70, 229, 0.4);
+    }
+    .cell-card-btn:focus-visible {
+      outline: 2px solid var(--cell-indigo);
+      outline-offset: 2px;
+    }
+    .cell-card-strip {
+      width: 6px;
+      align-self: stretch;
+      flex-shrink: 0;
+    }
+    .cell-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+      margin: 16px 16px 16px 16px;
+    }
+    .cell-card-text {
+      flex: 1 1 0%;
+      min-width: 0;
+      padding: 16px 16px 16px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .cell-card-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 3px;
+      color: var(--cell-text);
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+    .cell-card-tagline {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: var(--cell-muted);
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+    .cell-card-desc {
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.45;
+      max-width: 100%;
+      overflow-wrap: break-word;
+      word-break: normal;
+    }
+    .cell-card-chevron {
+      font-size: 24px;
+      font-weight: 900;
+      line-height: 1;
+      padding: 0 18px 0 4px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: all .2s ease;
+      transform: translateX(-6px);
+      color: var(--cell-indigo);
+    }
+    .cell-card-btn:hover .cell-card-chevron {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Sub-Page Navigation Bar */
+    .cell-page {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #f8fafc;
+      color: var(--cell-text);
+      min-height: 100vh;
+    }
+    .cell-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 32px;
+      background: #fff;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .cell-nav-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--cell-indigo);
+      background: rgba(79, 70, 229, 0.08);
+      border: 1.5px solid rgba(79, 70, 229, 0.2);
+      border-radius: 100px;
+      padding: 8px 18px;
+      cursor: pointer;
+      transition: all .2s ease;
+      text-decoration: none;
+    }
+    .cell-nav-back:hover {
+      background: rgba(79, 70, 229, 0.15);
+      transform: translateX(-2px);
+    }
+    .cell-nav-links {
+      display: flex;
+      gap: 8px;
+    }
+    .cell-nav-link {
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .2s ease;
+      border: 1.5px solid #e2e8f0;
+      background: #f8fafc;
+      color: var(--cell-muted);
+    }
+    .cell-nav-link:hover {
+      border-color: var(--cell-indigo);
+      color: var(--cell-indigo);
+    }
+    .cell-nav-link.active {
+      background: linear-gradient(135deg, var(--cell-indigo), var(--cell-violet));
+      border-color: transparent;
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+    }
+    .cell-hero {
+      background: linear-gradient(145deg, #1e1b4b, #312e81);
+      padding: 48px 24px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .cell-hero-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 2;
+    }
+    .cell-hero-sub {
+      font-size: 1.1rem;
+      opacity: .85;
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Grids & Cards */
+    .cell-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      padding: 40px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .cell-intro-card {
+      background: #fff;
+      border: 1px solid var(--cell-border);
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all .3s ease;
+      box-shadow: var(--cell-sh);
+    }
+    .cell-intro-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--cell-shlg);
+      border-color: var(--cell-indigo);
+    }
+    .cell-intro-card-header {
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .cell-intro-card-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: #fff;
+    }
+    .cell-intro-card-q {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--cell-text);
+    }
+    .cell-intro-card-body {
+      display: none;
+      padding: 0 24px 24px;
+      animation: fadeIn .3s ease;
+    }
+    .cell-intro-card.expanded .cell-intro-card-body {
+      display: block;
+    }
+    .cell-intro-card-content {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--cell-muted);
+      margin-bottom: 16px;
+    }
+    .cell-intro-card-fact {
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      background: rgba(79, 70, 229, 0.05);
+      border: 1px solid rgba(79, 70, 229, 0.1);
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Terminology Lexicon */
+    .cell-lexicon-container {
+      max-width: 1100px;
+      margin: 40px auto 20px;
+      padding: 0 24px;
+    }
+    .cell-lexicon-grid {
+      display: grid;
+      grid-template-columns: minmax(280px, 340px) 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    .cell-selector-container {
+      background: rgba(255, 255, 255, 0.8);
+      padding: 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(0, 0, 0, .05);
+      display: grid;
+      gap: 10px;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+    .cell-term-btn-mini {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1.5px solid rgba(0, 0, 0, .06);
+      cursor: pointer;
+      transition: all .25s cubic-bezier(.4, 0, .2, 1);
+      text-align: left;
+      font-family: 'Outfit', sans-serif;
+      background: #fff;
+    }
+    .cell-term-btn-mini:hover {
+      border-color: var(--cell-indigo);
+      transform: translateX(4px);
+    }
+    .cell-term-btn-mini.active {
+      background: linear-gradient(135deg, var(--cell-indigo), var(--cell-violet));
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+    }
+
+    .cell-details-window {
+      background: #fff;
+      border: 1px solid var(--cell-border);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: var(--cell-sh);
+    }
+
+    /* Interactive Student Question Input Styling */
+    .interactive-blank-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin-bottom: 16px;
+      transition: all .25s ease;
+    }
+    .interactive-blank-box.correct-box {
+      background: rgba(16, 185, 129, 0.06);
+      border-color: var(--cell-success);
+    }
+    .interactive-blank-box.wrong-box {
+      background: rgba(239, 68, 68, 0.06);
+      border-color: var(--cell-wrong);
+    }
+    .blank-input-field {
+      padding: 10px 16px;
+      border-radius: 10px;
+      border: 2px solid #cbd5e1;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      width: 100%;
+      max-width: 340px;
+      margin-top: 10px;
+      transition: border-color .2s;
+    }
+    .blank-input-field:focus {
+      outline: none;
+      border-color: var(--cell-indigo);
+      background: #fff;
+    }
+    .blank-input-field.correct-input {
+      border-color: var(--cell-success);
+      background: #ecfdf5;
+      color: #065f46;
+    }
+    .blank-input-field.wrong-input {
+      border-color: var(--cell-wrong);
+      background: #fef2f2;
+      color: #991b1b;
+    }
+
+    .match-select-field {
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 2px solid #cbd5e1;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      width: 100%;
+      max-width: 320px;
+      background: #fff;
+      cursor: pointer;
+      transition: border-color .2s;
+    }
+    .match-select-field.correct-select {
+      border-color: var(--cell-success);
+      background: #ecfdf5;
+      color: #065f46;
+    }
+    .match-select-field.wrong-select {
+      border-color: var(--cell-wrong);
+      background: #fef2f2;
+      color: #991b1b;
+    }
+
+    /* Skills / Interactive Accordion */
+    .cell-skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+    .cell-skill-card {
+      background: #fff;
+      border: 1px solid var(--cell-border);
+      border-radius: 20px;
+      padding: 24px;
+      cursor: pointer;
+      transition: all .3s ease;
+      box-shadow: var(--cell-sh);
+    }
+    .cell-skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--cell-shlg);
+      border-color: var(--cell-indigo);
+    }
+    .cell-skill-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .cell-skill-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    /* Quiz Window */
+    .cell-quiz-window {
+      background: #fff;
+      border: 1px solid var(--cell-border);
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: var(--cell-shlg);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .cell-quiz-option {
+      padding: 16px 20px;
+      border: 2px solid var(--cell-border);
+      border-radius: 14px;
+      background: #fff;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: left;
+      transition: all .2s ease;
+      width: 100%;
+    }
+    .cell-quiz-option:hover:not(:disabled) {
+      border-color: var(--cell-indigo);
+      background: rgba(79, 70, 229, 0.04);
+    }
+    .cell-quiz-option.correct {
+      border-color: var(--cell-success) !important;
+      background: rgba(16, 185, 129, 0.08) !important;
+      color: #065f46;
+    }
+    .cell-quiz-option.wrong {
+      border-color: var(--cell-wrong) !important;
+      background: rgba(239, 68, 68, 0.08) !important;
+      color: #991b1b;
+    }
+    .cell-quiz-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    /* Endocrine Body Map Styling */
+    .gland-dot {
+      fill: var(--cell-teal);
+      stroke: #fff;
+      stroke-width: 2.5;
+      cursor: pointer;
+      transition: transform .25s ease, fill .25s ease;
+    }
+    .gland-dot:hover, .gland-dot.active {
+      fill: var(--cell-indigo);
+      transform: scale(1.3);
+    }
+
+    @media (max-width: 900px) {
+      .cell-fullpage {
+        flex-direction: column;
+      }
+      .cell-left {
+        flex: none;
+        padding: 40px 24px;
+      }
+      .cell-right {
+        padding: 32px 20px;
+      }
+      .cell-card-btn {
+        min-height: 84px;
+      }
+      .cell-card-icon {
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+        margin: 14px 12px 14px 14px;
+        border-radius: 12px;
+      }
+      .cell-card-text {
+        padding: 14px 12px 14px 0;
+      }
+      .cell-card-label {
+        font-size: 16px;
+      }
+      .cell-card-desc {
+        font-size: 12px;
+      }
+      .cell-lexicon-grid {
+        grid-template-columns: 1fr;
+      }
+      .cell-nav {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+      }
+      .cell-nav-links {
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+      .cell-quiz-options {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    /* ===== IMAGE-REFERENCE LEARNING UI ===== */
+    .core-skills-view { min-height:100vh; background:#f8fafc; padding:0 0 56px; }
+    .core-skills-head { text-align:center; padding:18px 20px 20px; }
+    .core-skills-head h1 { font-family:'Outfit',sans-serif; font-size:30px; line-height:1.1; margin:0 0 8px; font-weight:900; }
+    .core-skills-head h1 span { color:#2563eb; }
+    .core-skills-head p { color:#64748b; font-size:12px; line-height:1.45; max-width:390px; margin:auto; }
+    .core-skills-list { width:min(526px, calc(100% - 32px)); margin:0 auto; display:flex; flex-direction:column; gap:10px; }
+    .core-skill-card { background:#fff; border:1px solid #e7ebf1; border-radius:12px; min-height:76px; padding:10px 16px; display:grid; grid-template-columns:34px minmax(0,1fr) 138px; align-items:center; gap:10px; box-shadow:0 2px 7px rgba(15,23,42,.08); }
+    .core-skill-icon { width:34px; height:34px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:15px; }
+    .core-skill-main h3 { font-size:12px; font-weight:800; margin:0 0 3px; color:#0f172a; }
+    .core-skill-main p { font-size:8px; line-height:1.35; color:#64748b; margin:0; }
+    .core-skill-actions { display:grid; grid-template-columns:1fr 1fr; gap:6px; }
+    .core-skill-actions button { height:25px; border-radius:14px; border:1px solid #dbe3ee; background:#fff; color:#0f172a; font-size:8px; font-weight:700; cursor:pointer; }
+    .core-skill-actions .assess { grid-column:1 / -1; color:#fff; border:none; height:23px; }
+    .core-skill-actions button:hover { transform:translateY(-1px); box-shadow:0 2px 6px rgba(15,23,42,.08); }
+    .learning-shell { min-height:100vh; display:grid; grid-template-columns:290px minmax(0,1fr); background:#f8fafc; }
+    .learning-side { background:#fff; padding:20px 10px; border-right:1px solid #eef2f7; }
+    .learning-brand { font-family:'Outfit',sans-serif; font-weight:900; font-size:27px; margin:0 0 28px 8px; color:#111827; }
+    .learning-side-btn { width:100%; border:0; background:#fff; border-radius:12px; padding:15px 16px; text-align:left; font-size:15px; font-weight:800; color:#64748b; cursor:pointer; }
+    .learning-side-btn.active { background:#2563eb; color:#fff; box-shadow:0 8px 18px rgba(37,99,235,.22); }
+    .learning-main { padding:0; }
+    .learning-panel { max-width:680px; margin:0 auto; background:#fff; min-height:100vh; border-top:3px solid #2563eb; padding:38px 40px 60px; }
+    .topic-kicker { font-size:12px; font-weight:800; letter-spacing:1.5px; color:#2563eb; margin-bottom:12px; }
+    .topic-title { font-family:'Outfit',sans-serif; font-size:34px; line-height:1.1; font-weight:900; color:#111827; margin:0 0 30px; }
+    .learn-entry { margin-bottom:38px; }
+    .learn-entry h3 { font-family:'Outfit',sans-serif; font-size:17px; line-height:1.3; color:#334155; margin:0 0 12px; }
+    .learn-entry p { font-size:15px; line-height:1.75; color:#334155; margin:0; }
+    .learn-entry .focus-note { margin-top:13px; padding-left:12px; border-left:3px solid #2563eb; color:#475569; font-size:13px; line-height:1.6; }
+    .learn-nav { display:flex; justify-content:space-between; gap:10px; margin-top:20px; }
+    .learn-nav button { border:1px solid #dbe3ee; background:#fff; border-radius:20px; padding:9px 14px; font-weight:700; color:#2563eb; cursor:pointer; }
+    .practice-page { min-height:100vh; background:#f8fafc; display:flex; align-items:center; justify-content:center; padding:20px; }
+    .practice-card { width:min(700px,100%); background:#fff; border-radius:20px; padding:30px 32px 28px; box-shadow:0 7px 28px rgba(15,23,42,.08); }
+    .practice-top { display:flex; justify-content:space-between; align-items:center; margin-bottom:28px; color:#2563eb; font-size:14px; font-weight:800; }
+    .practice-exit { color:#64748b; cursor:pointer; }
+    .practice-question { font-size:18px; line-height:1.5; font-weight:800; color:#111827; margin-bottom:22px; }
+    .practice-options { display:flex; flex-direction:column; gap:10px; }
+    .practice-option { width:100%; text-align:left; padding:14px 16px; background:#fff; border:2px solid #e1e7ef; border-radius:12px; font-size:14px; font-weight:600; color:#1e293b; cursor:pointer; display:flex; align-items:center; gap:12px; }
+    .practice-option .letter { width:28px; height:28px; border-radius:50%; background:#f1f5f9; display:inline-flex; align-items:center; justify-content:center; color:#64748b; font-weight:800; }
+    .practice-option.selected { border-color:#2563eb; background:#eff6ff; }
+    .practice-option.selected .letter { background:#2563eb; color:#fff; }
+    .practice-footer { display:flex; justify-content:flex-end; margin-top:20px; }
+    .practice-next { border:0; background:#dbe3ee; color:#94a3b8; padding:11px 20px; border-radius:22px; font-weight:800; cursor:pointer; }
+    .practice-next.ready { background:#2563eb; color:#fff; }
+    .assess-page { min-height:100vh; background:#f8fafc; padding:24px 28px; }
+    .assess-wrap { max-width:1050px; margin:auto; display:grid; grid-template-columns:minmax(0,1fr) 250px; gap:24px; align-items:start; }
+    .assess-main { background:#fff; border-radius:18px; padding:28px 32px; box-shadow:0 4px 18px rgba(15,23,42,.06); }
+    .assess-badge { display:inline-block; border:2px solid #111827; border-radius:18px; padding:5px 13px; font-size:11px; font-weight:900; letter-spacing:.8px; }
+    .assess-question { margin:18px 0; font-size:18px; font-weight:800; line-height:1.45; }
+    .assess-option { width:100%; padding:12px 14px; border:2px solid #dfe6ef; border-radius:11px; background:#fff; margin:0 0 9px; text-align:left; font-size:14px; font-weight:600; cursor:pointer; }
+    .assess-option.selected { border-color:#4f46e5; background:#f5f3ff; }
+    .assess-actions { display:flex; justify-content:flex-end; gap:10px; margin-top:20px; }
+    .assess-actions button { padding:10px 18px; border-radius:22px; font-weight:800; border:1px solid #dbe3ee; background:#fff; cursor:pointer; }
+    .assess-actions .next { background:#4f46e5; color:#fff; border:none; }
+    .assess-side { background:#fff; border-radius:18px; padding:20px; box-shadow:0 4px 18px rgba(15,23,42,.06); }
+    .timer { font-family:'Outfit',sans-serif; font-size:28px; font-weight:900; margin-bottom:18px; }
+    .palette-title { font-size:14px; font-weight:900; margin-bottom:12px; }
+    .palette { display:grid; grid-template-columns:repeat(5,1fr); gap:8px; margin-bottom:18px; }
+    .palette button { height:36px; border:1px solid #dbe3ee; border-radius:7px; background:#fff; color:#64748b; font-weight:800; cursor:pointer; }
+    .palette button.answered { background:#4f46e5; color:#fff; border-color:#4f46e5; }
+    .palette button.current { outline:2px solid #111827; outline-offset:1px; }
+    .legend { display:grid; gap:8px; font-size:12px; color:#475569; }
+    .legend span { display:flex; align-items:center; gap:8px; }
+    .legend i { width:14px; height:14px; border-radius:4px; border:1px solid #dbe3ee; display:inline-block; }
+    .legend .a { background:#4f46e5; border-color:#4f46e5; }
+    .legend .r { border:2px solid #f59e0b; }
+    .submit-assess { width:100%; margin-top:20px; border:0; border-radius:10px; padding:13px; background:#ef4444; color:#fff; font-weight:900; cursor:pointer; }
+    /* ===== Skills reference UI refinements ===== */
+    .core-skills-view{min-height:100vh;background:#f8fafc;padding:0 0 56px;}
+    .core-skills-topbar{height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;border-bottom:1px solid #e7ebf1;background:#fff;position:sticky;top:0;z-index:20;}
+    .core-back-btn{border:0;background:#fff;color:#64748b;font-size:11px;font-weight:800;cursor:pointer;padding:7px 10px;border-radius:8px;}
+    .core-back-btn:hover{background:#f1f5f9;color:#2563eb;}
+    .core-progress{font-size:10px;color:#94a3b8;font-weight:800;letter-spacing:.4px;}
+    .core-skills-head{padding:28px 20px 22px;}
+    .core-skills-list{width:min(650px,calc(100% - 32px));gap:11px;}
+    .core-skill-card{min-height:82px;grid-template-columns:38px minmax(0,1fr) 160px;padding:12px 15px;border-radius:13px;}
+    .core-skill-card:hover{transform:translateY(-1px);border-color:#cbd5e1;box-shadow:0 5px 14px rgba(15,23,42,.09);}
+    .core-skill-main h3{font-size:12px;}
+    .core-skill-main p{font-size:8.5px;}
+    .core-skill-actions button{transition:.18s ease;}
+    .core-skill-actions button:focus-visible,.core-back-btn:focus-visible,.learning-side-btn:focus-visible,.practice-option:focus-visible,.assess-option:focus-visible{outline:2px solid #2563eb;outline-offset:2px;}
+    .practice-feedback{margin-top:16px;padding:13px 15px;border-radius:10px;background:#f8fafc;border:1px solid #e2e8f0;font-size:13px;line-height:1.6;color:#334155;}
+    .practice-option.correct{border-color:#10b981;background:#ecfdf5;}
+    .practice-option.wrong{border-color:#ef4444;background:#fef2f2;}
+    .assess-option.correct{border-color:#10b981;background:#ecfdf5;}
+    .assess-option.wrong{border-color:#ef4444;background:#fef2f2;}
+    .assessment-results{max-width:900px;margin:0 auto;background:#fff;border-radius:18px;padding:28px 32px;box-shadow:0 4px 18px rgba(15,23,42,.06);}
+    .assessment-result{padding:12px 14px;border:1px solid #e2e8f0;border-radius:10px;margin-top:9px;font-size:13px;line-height:1.55;}
+    .assessment-result.ok{border-color:#a7f3d0;background:#ecfdf5;}
+    .assessment-result.bad{border-color:#fecaca;background:#fef2f2;}
+    .assess-marked{box-shadow:inset 0 0 0 2px #f59e0b!important;border-color:#f59e0b!important;}
+    @media(max-width:850px){ .learning-shell{grid-template-columns:1fr}.learning-side{display:none}.learning-panel{padding:28px 22px}.assess-wrap{grid-template-columns:1fr}.assess-side{order:-1}.core-skill-card{grid-template-columns:34px minmax(0,1fr);}.core-skill-actions{grid-column:1 / -1; grid-template-columns:1fr 1fr;}.core-skill-actions .assess{grid-column:1 / -1}.core-skills-list{width:min(600px,calc(100% - 20px));} }
+
+  </style>
+
+<style id="core-skills-button-update">
+  .core-dashboard-back,
+  .session-dashboard-back {
+    max-width: 1100px;
+    margin: 0 auto 18px;
+    padding: 0 24px;
+  }
+
+  #view-core-skills .core-skill-actions button,
+  #view-skills .core-skill-actions button {
+    font-size: 16px !important;
+    line-height: 1.25 !important;
+    padding: 12px 18px !important;
+    min-height: 46px;
+  }
+
+  @media (max-width: 850px) {
+    .core-dashboard-back,
+    .session-dashboard-back {
+      padding: 0 16px;
+    }
+    #view-core-skills .core-skill-actions button,
+    #view-skills .core-skill-actions button {
+      font-size: 15px !important;
+    }
+  }
+</style>
+
+
+<style id="core-skills-alignment-fix">
+  /* Core Skills — aligned to the supplied reference layout */
+  #view-core-skills .core-skills-view,
+  #view-skills .core-skills-view {
+    width: 100%;
+  }
+
+  #view-core-skills .core-skills-head,
+  #view-skills .core-skills-head {
+    padding: 28px 20px 34px;
+  }
+
+  #view-core-skills .core-skills-head h1,
+  #view-skills .core-skills-head h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 44px;
+    line-height: 1.08;
+    font-weight: 900;
+    margin: 0 0 22px;
+  }
+
+  #view-core-skills .core-skills-head p,
+  #view-skills .core-skills-head p {
+    max-width: 760px;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #64748b;
+  }
+
+  #view-core-skills .core-skills-list,
+  #view-skills .core-skills-list {
+    width: min(1262px, calc(100% - 48px));
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  #view-core-skills .core-skill-card,
+  #view-skills .core-skill-card {
+    width: 100%;
+    min-height: 180px;
+    padding: 18px 38px;
+    border-radius: 22px;
+    display: grid;
+    grid-template-columns: 78px minmax(0, 1fr) 328px;
+    align-items: center;
+    column-gap: 20px;
+    row-gap: 0;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, .09);
+  }
+
+  #view-core-skills .core-skill-icon,
+  #view-skills .core-skill-icon {
+    width: 78px;
+    height: 78px;
+    border-radius: 14px;
+    font-size: 34px;
+  }
+
+  #view-core-skills .core-skill-main,
+  #view-skills .core-skill-main {
+    min-width: 0;
+  }
+
+  #view-core-skills .core-skill-main h3,
+  #view-skills .core-skill-main h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 27px;
+    line-height: 1.2;
+    font-weight: 800;
+    margin: 0 0 10px;
+    color: #0f172a;
+  }
+
+  #view-core-skills .core-skill-main p,
+  #view-skills .core-skill-main p {
+    font-size: 17px;
+    line-height: 1.45;
+    font-weight: 400;
+    color: #64748b;
+    margin: 0;
+  }
+
+  #view-core-skills .core-skill-actions,
+  #view-skills .core-skill-actions {
+    width: 328px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 58px 50px;
+    gap: 14px;
+    align-self: center;
+  }
+
+  #view-core-skills .core-skill-actions button,
+  #view-skills .core-skill-actions button {
+    width: 100%;
+    height: 58px;
+    min-height: 58px;
+    margin: 0;
+    padding: 0 18px !important;
+    border: 2px solid #dbe3ee;
+    border-radius: 30px;
+    background: #fff;
+    color: #0f172a;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px !important;
+    font-weight: 700;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
+
+  #view-core-skills .core-skill-actions .assess,
+  #view-skills .core-skill-actions .assess {
+    grid-column: 1 / -1;
+    height: 50px;
+    min-height: 50px;
+    border: none;
+    border-radius: 26px;
+    color: #fff;
+  }
+
+  #view-core-skills .core-skill-actions button:hover,
+  #view-skills .core-skill-actions button:hover {
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 1050px) {
+    #view-core-skills .core-skills-list,
+    #view-skills .core-skills-list {
+      width: min(900px, calc(100% - 32px));
+    }
+
+    #view-core-skills .core-skill-card,
+    #view-skills .core-skill-card {
+      grid-template-columns: 64px minmax(0, 1fr) 280px;
+      padding: 18px 24px;
+    }
+
+    #view-core-skills .core-skill-icon,
+    #view-skills .core-skill-icon {
+      width: 64px;
+      height: 64px;
+      font-size: 28px;
+    }
+
+    #view-core-skills .core-skill-main h3,
+    #view-skills .core-skill-main h3 {
+      font-size: 23px;
+    }
+
+    #view-core-skills .core-skill-main p,
+    #view-skills .core-skill-main p {
+      font-size: 15px;
+    }
+
+    #view-core-skills .core-skill-actions,
+    #view-skills .core-skill-actions {
+      width: 280px;
+    }
+  }
+
+  @media (max-width: 850px) {
+    #view-core-skills .core-skills-head h1,
+    #view-skills .core-skills-head h1 {
+      font-size: 34px;
+    }
+
+    #view-core-skills .core-skills-head p,
+    #view-skills .core-skills-head p {
+      font-size: 16px;
+    }
+
+    #view-core-skills .core-skills-list,
+    #view-skills .core-skills-list {
+      width: calc(100% - 24px);
+    }
+
+    #view-core-skills .core-skill-card,
+    #view-skills .core-skill-card {
+      min-height: 0;
+      grid-template-columns: 52px minmax(0, 1fr);
+      padding: 16px;
+      gap: 14px;
+    }
+
+    #view-core-skills .core-skill-icon,
+    #view-skills .core-skill-icon {
+      width: 52px;
+      height: 52px;
+      font-size: 24px;
+    }
+
+    #view-core-skills .core-skill-main h3,
+    #view-skills .core-skill-main h3 {
+      font-size: 20px;
+    }
+
+    #view-core-skills .core-skill-main p,
+    #view-skills .core-skill-main p {
+      font-size: 14px;
+    }
+
+    #view-core-skills .core-skill-actions,
+    #view-skills .core-skill-actions {
+      grid-column: 1 / -1;
+      width: 100%;
+      grid-template-rows: 52px 48px;
+      gap: 10px;
+    }
+
+    #view-core-skills .core-skill-actions button,
+    #view-skills .core-skill-actions button {
+      height: 52px;
+      min-height: 52px;
+      font-size: 15px !important;
+    }
+
+    #view-core-skills .core-skill-actions .assess,
+    #view-skills .core-skill-actions .assess {
+      height: 48px;
+      min-height: 48px;
+    }
+  }
+</style>
+
+</head>
+<body>
+
+  <!-- VIEW 1: DASHBOARD -->
+  <div id="view-dashboard" class="app-view active">
+    <div class="cell-fullpage">
+      <div class="cell-left">
+        <div class="cell-deco cell-deco-a"></div>
+        <div class="cell-deco cell-deco-b"></div>
+        <div class="cell-left-content">
+          <h1 class="cell-main-title">
+            Chemical Coordination <br />
+            <span class="cell-title-accent">&amp; Integration</span>
+          </h1>
+          <p class="cell-main-sub">
+            Master Grade 11 Biology Chapter 19 — Endocrine Glands, Hormonal Mechanisms, Feedback Loops, and High-Yield NEET Revision.
+          </p>
+          <div class="cell-stats-grid">
+            <div class="cell-stat">
+              <span class="cell-stat-num">17</span>
+              <span class="cell-stat-lbl">Sub-Topics</span>
+            </div>
+            <div class="cell-stat">
+              <span class="cell-stat-num">12</span>
+              <span class="cell-stat-lbl">Core Terms</span>
+            </div>
+            <div class="cell-stat">
+              <span class="cell-stat-num">6</span>
+              <span class="cell-stat-lbl">Connectomics</span>
+            </div>
+            <div class="cell-stat">
+              <span class="cell-stat-num">17</span>
+              <span class="cell-stat-lbl">Exam Edge MCQs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cell-right">
+        <div class="cell-right-eyebrow">CHOOSE YOUR PATH</div>
+        <div class="cell-cards-col">
+
+          <button class="cell-card-btn" onclick="navigateTo('connectomics')">
+            <div class="cell-card-strip" style="background:#f59e0b"></div>
+            <div class="cell-card-icon" style="background:rgba(245,158,11,0.12); color:#f59e0b">🔗</div>
+            <div class="cell-card-text">
+              <div class="cell-card-tagline">BIG PICTURE</div>
+              <div class="cell-card-label">Connectomics</div>
+              <div class="cell-card-desc">Interactive Body Map of endocrine glands &amp; cross-topic physiological pathways.</div>
+            </div>
+            <div class="cell-card-chevron">›</div>
+          </button>
+
+          <button class="cell-card-btn" onclick="navigateTo('intro')">
+            <div class="cell-card-strip" style="background:#6366f1"></div>
+            <div class="cell-card-icon" style="background:rgba(99,102,241,0.12); color:#6366f1">🌟</div>
+            <div class="cell-card-text">
+              <div class="cell-card-tagline">START HERE</div>
+              <div class="cell-card-label">Introduction &amp; Essentials</div>
+              <div class="cell-card-desc">6 Big Questions (5W1H) &amp; essential prerequisites to build a solid hormonal foundation.</div>
+            </div>
+            <div class="cell-card-chevron">›</div>
+          </button>
+
+          <button class="cell-card-btn" onclick="navigateTo('terminology')">
+            <div class="cell-card-strip" style="background:#0d9488"></div>
+            <div class="cell-card-icon" style="background:rgba(13,148,136,0.12); color:#0d9488">📖</div>
+            <div class="cell-card-text">
+              <div class="cell-card-tagline">THE LANGUAGE</div>
+              <div class="cell-card-label">Terminology Lexicon</div>
+              <div class="cell-card-desc">Key hormone terms, definitions, 5 Golden Rules, pro-memory tips, and flashcards.</div>
+            </div>
+            <div class="cell-card-chevron">›</div>
+          </button>
+
+          <button class="cell-card-btn" onclick="navigateTo('skills')">
+            <div class="cell-card-strip" style="background:#7c3aed"></div>
+            <div class="cell-card-icon" style="background:rgba(124,58,237,0.12); color:#7c3aed">🎯</div>
+            <div class="cell-card-text">
+              <div class="cell-card-tagline">CORE CONTENT</div>
+              <div class="cell-card-label">Skills &amp; Mastery</div>
+              <div class="cell-card-desc">Section-by-section NCERT textbook content — Hypothalamus, Pituitary, Adrenal, Pancreas &amp; Mechanism of Action.</div>
+            </div>
+            <div class="cell-card-chevron">›</div>
+          </button>
+
+          <button class="cell-card-btn" onclick="navigateTo('exam-edge')">
+            <div class="cell-card-strip" style="background:#ef4444"></div>
+            <div class="cell-card-icon" style="background:rgba(239,68,68,0.12); color:#ef4444">⚡</div>
+            <div class="cell-card-text">
+              <div class="cell-card-tagline">NEET READY</div>
+              <div class="cell-card-label">Exam Edge</div>
+              <div class="cell-card-desc">NEET MCQs, Fill in the Blanks, Match the Following, Master Comparison tables &amp; Revision notes.</div>
+            </div>
+            <div class="cell-card-chevron">›</div>
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- IMAGE-REFERENCE VIEW: CORE SKILLS -->
+  <div id="view-core-skills" class="app-view">
+      <div class="core-dashboard-back">
+        <button type="button" class="cell-nav-back" onclick="navigateTo('dashboard')">
+          ← Back to Dashboard
+        </button>
+      </div>
+
+    <div class="core-skills-view">
+      <div class="core-skills-head">
+        <h1>Core <span>Skills</span></h1>
+        <p>Choose a skill below. Read the lesson, practice to build confidence,<br>and take the assessment to earn your mastery!</p>
+      </div>
+      <div id="core-skills-list" class="core-skills-list"></div>
+    </div>
+  </div>
+
+  <!-- IMAGE-REFERENCE VIEW: LEARN -->
+  <div id="view-learn" class="app-view">
+      <div class="session-dashboard-back">
+        <button type="button" class="cell-nav-back" onclick="navigateTo('dashboard')">
+          ← Back to Dashboard
+        </button>
+      </div>
+
+    <div class="learning-shell">
+      <aside class="learning-side">
+        <div class="learning-brand">🧪 Chemical<br>Coordination</div>
+        <button class="learning-side-btn active" id="learn-side-btn">▤ Section Overview</button>
+      </aside>
+      <main class="learning-main">
+        <div id="learn-panel" class="learning-panel"></div>
+      </main>
+    </div>
+  </div>
+
+  <!-- IMAGE-REFERENCE VIEW: PRACTICE -->
+  <div id="view-practice" class="app-view">
+      <div class="session-dashboard-back">
+        <button type="button" class="cell-nav-back" onclick="navigateTo('dashboard')">
+          ← Back to Dashboard
+        </button>
+      </div>
+
+    <div class="practice-page">
+      <div class="practice-card" id="practice-card"></div>
+    </div>
+  </div>
+
+  <!-- IMAGE-REFERENCE VIEW: ASSESS -->
+  <div id="view-assess" class="app-view">
+      <div class="session-dashboard-back">
+        <button type="button" class="cell-nav-back" onclick="navigateTo('dashboard')">
+          ← Back to Dashboard
+        </button>
+      </div>
+
+    <div class="assess-page">
+      <div class="assess-wrap">
+        <main class="assess-main" id="assess-main"></main>
+        <aside class="assess-side">
+          <div class="timer" id="assess-timer">0:04</div>
+          <div class="palette-title">Question Palette</div>
+          <div class="palette" id="assess-palette"></div>
+          <div class="legend">
+            <span><i class="a"></i> Answered</span>
+            <span><i></i> Not Answered</span>
+            <span><i class="r"></i> Marked for Review</span>
+          </div>
+          <button class="submit-assess" onclick="submitAssessment()">Submit Assessment</button>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIEW 2: CONNECTOMICS -->
+  <div id="view-connectomics" class="app-view">
+    <div class="cell-page">
+      <nav class="cell-nav">
+        <button class="cell-nav-back" onclick="navigateTo('dashboard')">← Back to Dashboard</button>
+        <div class="cell-nav-links">
+          <button class="cell-nav-link active" onclick="navigateTo('connectomics')">🧠 Connectomics</button>
+          <button class="cell-nav-link" onclick="navigateTo('intro')">🌟 Intro</button>
+          <button class="cell-nav-link" onclick="navigateTo('terminology')">📖 Terminology</button>
+          <button class="cell-nav-link" onclick="navigateTo('skills')">🎯 Skills</button>
+          <button class="cell-nav-link" onclick="navigateTo('exam-edge')">⚡ Exam Edge</button>
+        </div>
+      </nav>
+
+      <div class="cell-hero">
+        <h1 class="cell-hero-title">Endocrine <span style="color:#8bde4f">Connectomics</span></h1>
+        <p class="cell-hero-sub">Explore the interconnected human endocrine system through our interactive body map and cross-topic pathways.</p>
+      </div>
+
+      <main style="max-width:1200px; margin:0 auto; padding:40px 24px;">
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:32px; margin-bottom:60px; align-items:start">
+          
+          <!-- Interactive SVG Body Map -->
+          <div style="background:#fff; border-radius:24px; padding:32px; border:1px solid #e2e8f0; box-shadow:var(--cell-sh); text-align:center">
+            <h3 style="font-family:'Outfit', sans-serif; font-size:22px; font-weight:800; color:#1e1b4b; margin-bottom:8px">Human Endocrine Anatomy</h3>
+            <p style="font-size:13px; color:#64748b; margin-bottom:24px">Click any gland dot to inspect its location, hormones, and physiological roles.</p>
+            
+            <svg viewBox="0 0 320 520" style="max-width:260px; margin:0 auto; display:block">
+              <ellipse cx="160" cy="55" rx="38" ry="48" fill="#e8f4f8" stroke="#94b8c8" stroke-width="2"/>
+              <path d="M120 118 Q160 130 200 118 L195 280 Q160 295 125 280 Z" fill="#e8f4f8" stroke="#94b8c8" stroke-width="2"/>
+              <path d="M125 280 L115 420 Q160 440 205 420 L195 280" fill="#e8f4f8" stroke="#94b8c8" stroke-width="2"/>
+              <circle id="gland-hypothalamus" class="gland-dot active" onclick="inspectGland('hypothalamus')" cx="160" cy="42" r="10"/>
+              <circle id="gland-pituitary" class="gland-dot" onclick="inspectGland('pituitary')" cx="160" cy="72" r="8"/>
+              <circle id="gland-pineal" class="gland-dot" onclick="inspectGland('pineal')" cx="160" cy="28" r="7"/>
+              <circle id="gland-thyroid" class="gland-dot" onclick="inspectGland('thyroid')" cx="160" cy="108" r="10"/>
+              <circle id="gland-parathyroid" class="gland-dot" onclick="inspectGland('parathyroid')" cx="175" cy="100" r="6"/>
+              <circle id="gland-thymus" class="gland-dot" onclick="inspectGland('thymus')" cx="160" cy="145" r="9"/>
+              <circle id="gland-pancreas" class="gland-dot" onclick="inspectGland('pancreas')" cx="185" cy="210" r="9"/>
+              <circle id="gland-adrenal" class="gland-dot" onclick="inspectGland('adrenal')" cx="130" cy="230" r="8"/>
+              <circle id="gland-adrenal2" class="gland-dot" onclick="inspectGland('adrenal')" cx="190" cy="230" r="8"/>
+              <circle id="gland-ovary" class="gland-dot" onclick="inspectGland('ovary')" cx="145" cy="270" r="8"/>
+              <circle id="gland-testis" class="gland-dot" onclick="inspectGland('testis')" cx="145" cy="380" r="9"/>
+              <circle id="gland-testis2" class="gland-dot" onclick="inspectGland('testis')" cx="175" cy="380" r="9"/>
+            </svg>
+          </div>
+
+          <!-- Gland Details Inspector -->
+          <div id="gland-inspector-card" style="background:#fff; border-radius:24px; padding:32px; border:1px solid #e2e8f0; box-shadow:var(--cell-sh)">
+            <!-- Rendered via JS -->
+          </div>
+        </div>
+
+        <h2 style="font-family:'Outfit', sans-serif; font-size:28px; font-weight:900; margin-bottom:32px; text-align:center; color:#1e1b4b">Cross-Topic Physiological Pathways</h2>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:20px; margin-bottom:60px">
+          
+          <div style="background:#fff; border-radius:20px; padding:24px; border:1px solid #e2e8f0; box-shadow:0 4px 12px rgba(0,0,0,0.03); position:relative; overflow:hidden">
+            <div style="position:absolute; top:0; left:0; width:4px; height:100%; background:#6366f1"></div>
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px">
+              <div style="font-size:24px">🧠</div>
+              <div style="font-size:12px; font-weight:800; background:#6366f115; color:#6366f1; padding:4px 10px; border-radius:100px">Master Axis</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px">
+              <span style="font-weight:800; color:#1e1b4b">Hypothalamus</span>
+              <span style="color:#94a3b8">→</span>
+              <span style="font-weight:800; color:#6366f1">Pituitary Gland</span>
+            </div>
+            <p style="margin:0; font-size:14px; color:#64748b; line-height:1.6">GnRH, TRH, CRH, GHRH &amp; Somatostatin reach the anterior pituitary via portal circulatory system, while posterior pituitary is under direct neural control.</p>
+          </div>
+
+          <div style="background:#fff; border-radius:20px; padding:24px; border:1px solid #e2e8f0; box-shadow:0 4px 12px rgba(0,0,0,0.03); position:relative; overflow:hidden">
+            <div style="position:absolute; top:0; left:0; width:4px; height:100%; background:#0d9488"></div>
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px">
+              <div style="font-size:24px">🩸</div>
+              <div style="font-size:12px; font-weight:800; background:#0d948815; color:#0d9488; padding:4px 10px; border-radius:100px">Homeostasis</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px">
+              <span style="font-weight:800; color:#1e1b4b">Pancreas α-cells (Glucagon)</span>
+              <span style="color:#94a3b8">↔</span>
+              <span style="font-weight:800; color:#0d9488">Pancreas β-cells (Insulin)</span>
+            </div>
+            <p style="margin:0; font-size:14px; color:#64748b; line-height:1.6">Antagonistic dual regulation: Glucagon induces glycogenolysis/gluconeogenesis (hyperglycemic), while Insulin promotes glucose uptake &amp; glycogenesis (hypoglycemic).</p>
+          </div>
+
+          <div style="background:#fff; border-radius:20px; padding:24px; border:1px solid #e2e8f0; box-shadow:0 4px 12px rgba(0,0,0,0.03); position:relative; overflow:hidden">
+            <div style="position:absolute; top:0; left:0; width:4px; height:100%; background:#7c3aed"></div>
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px">
+              <div style="font-size:24px">🦴</div>
+              <div style="font-size:12px; font-weight:800; background:#7c3aed15; color:#7c3aed; padding:4px 10px; border-radius:100px">Calcium Balance</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px">
+              <span style="font-weight:800; color:#1e1b4b">Parathyroid (PTH)</span>
+              <span style="color:#94a3b8">↔</span>
+              <span style="font-weight:800; color:#7c3aed">Thyroid (TCT)</span>
+            </div>
+            <p style="margin:0; font-size:14px; color:#64748b; line-height:1.6">PTH increases blood Ca²⁺ levels by bone resorption &amp; renal reabsorption (hypercalcemic), while Thyrocalcitonin (TCT) lowers blood Ca²⁺ levels.</p>
+          </div>
+
+          <div style="background:#fff; border-radius:20px; padding:24px; border:1px solid #e2e8f0; box-shadow:0 4px 12px rgba(0,0,0,0.03); position:relative; overflow:hidden">
+            <div style="position:absolute; top:0; left:0; width:4px; height:100%; background:#f59e0b"></div>
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px">
+              <div style="font-size:24px">⚡</div>
+              <div style="font-size:12px; font-weight:800; background:#f59e0b15; color:#f59e0b; padding:4px 10px; border-radius:100px">Emergency Axis</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px">
+              <span style="font-weight:800; color:#1e1b4b">Adrenal Medulla</span>
+              <span style="color:#94a3b8">→</span>
+              <span style="font-weight:800; color:#f59e0b">Fight or Flight</span>
+            </div>
+            <p style="margin:0; font-size:14px; color:#64748b; line-height:1.6">Epinephrine &amp; Norepinephrine increase alertness, heart rate, piloerection, sweating, and glycogen breakdown during acute physical or environmental stress.</p>
+          </div>
+
+          <div style="background:#fff; border-radius:20px; padding:24px; border:1px solid #e2e8f0; box-shadow:0 4px 12px rgba(0,0,0,0.03); position:relative; overflow:hidden">
+            <div style="position:absolute; top:0; left:0; width:4px; height:100%; background:#ec4899"></div>
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px">
+              <div style="font-size:24px">💧</div>
+              <div style="font-size:12px; font-weight:800; background:#ec489915; color:#ec4899; padding:4px 10px; border-radius:100px">Fluid &amp; Pressure</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px">
+              <span style="font-weight:800; color:#1e1b4b">ADH (Vasopressin)</span>
+              <span style="color:#94a3b8">↔</span>
+              <span style="font-weight:800; color:#ec4899">ANF (Heart Atria)</span>
+            </div>
+            <p style="margin:0; font-size:14px; color:#64748b; line-height:1.6">ADH reduces water loss in urine by kidney distal tubule reabsorption. ANF secreted by heart atria causes vasodilation to lower elevated blood pressure.</p>
+          </div>
+
+          <div style="background:#fff; border-radius:20px; padding:24px; border:1px solid #e2e8f0; box-shadow:0 4px 12px rgba(0,0,0,0.03); position:relative; overflow:hidden">
+            <div style="position:absolute; top:0; left:0; width:4px; height:100%; background:#3b82f6"></div>
+            <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px">
+              <div style="font-size:24px">🧪</div>
+              <div style="font-size:12px; font-weight:800; background:#3b82f615; color:#3b82f6; padding:4px 10px; border-radius:100px">Non-Endocrine Tissue</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px">
+              <span style="font-weight:800; color:#1e1b4b">GI Tract, Kidney &amp; Heart</span>
+              <span style="color:#94a3b8">→</span>
+              <span style="font-weight:800; color:#3b82f6">Diffused Hormones</span>
+            </div>
+            <p style="margin:0; font-size:14px; color:#64748b; line-height:1.6">Gastrin, Secretin, CCK &amp; GIP regulate digestive juices; Kidney JGA produces Erythropoietin for RBC formation; Heart produces ANF.</p>
+          </div>
+
+        </div>
+
+        <h2 style="font-family:'Outfit', sans-serif; font-size:28px; font-weight:900; margin-bottom:32px; text-align:center; color:#1e1b4b">Real World Medical Applications</h2>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px;">
+          <div style="background:linear-gradient(135deg, #1e1b4b, #312e81); padding:32px; border-radius:24px; color:#fff">
+            <div style="font-size:11px; font-weight:900; color:#f59e0b; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px">Impact: High</div>
+            <h3 style="font-size:22px; font-weight:800; margin-bottom:12px">Diabetes &amp; Insulin Therapy</h3>
+            <p style="margin:0; opacity:.85; font-size:15px; line-height:1.6">Prolonged hyperglycemia leads to Diabetes Mellitus with glucosuria and ketone bodies. Exogenous insulin therapy restores glucose homeostasis.</p>
+          </div>
+          <div style="background:linear-gradient(135deg, #1e1b4b, #312e81); padding:32px; border-radius:24px; color:#fff">
+            <div style="font-size:11px; font-weight:900; color:#f59e0b; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px">Impact: Essential</div>
+            <h3 style="font-size:22px; font-weight:800; margin-bottom:12px">Thyroid Disorders &amp; Growth</h3>
+            <p style="margin:0; opacity:.85; font-size:15px; line-height:1.6">Iodinated salt prevents Goitre. Maternal hypothyroidism causes Cretinism in babies. Exophthalmic goitre (Graves' disease) increases BMR abnormally.</p>
+          </div>
+          <div style="background:linear-gradient(135deg, #1e1b4b, #312e81); padding:32px; border-radius:24px; color:#fff">
+            <div style="font-size:11px; font-weight:900; color:#f59e0b; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px">Impact: Emerging</div>
+            <h3 style="font-size:22px; font-weight:800; margin-bottom:12px">Synthetic Hormone Therapeutics</h3>
+            <p style="margin:0; opacity:.85; font-size:15px; line-height:1.6">Recombinant growth hormone treats pituitary dwarfism; synthetic erythropoietin treats anemia in kidney failure; corticosteroids control autoimmune inflammation.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:60px; text-align:center; background:#f8fafc; padding:40px; border-radius:32px; border:2px dashed #e2e8f0">
+          <div style="font-size:48px; margin-bottom:16px">🔗</div>
+          <h3 style="font-size:20px; font-weight:800; color:#1e1b4b">Seamless Biological Control</h3>
+          <p style="max-width:600px; margin:0 auto; color:#64748b; margin-bottom:32px">Neural control is fast and point-to-point; endocrine regulation is continuous and chemical. Together they coordinate every cell in your body.</p>
+          <button onclick="navigateTo('intro')" style="padding:12px 32px; font-size:16px; background:#fff; color:#0f172a; border:1px solid #e2e8f0; border-radius:100px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:8px; box-shadow:0 2px 4px rgba(0,0,0,0.05)">
+            Next Topic: Intro &amp; Essentials <span style="color:var(--cell-indigo)">→</span>
+          </button>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- VIEW 3: INTRODUCTION -->
+  <div id="view-intro" class="app-view">
+    <div class="cell-page">
+      <nav class="cell-nav">
+        <button class="cell-nav-back" onclick="navigateTo('dashboard')">← Back to Dashboard</button>
+        <div class="cell-nav-links">
+          <button class="cell-nav-link" onclick="navigateTo('connectomics')">🧠 Connectomics</button>
+          <button class="cell-nav-link active" onclick="navigateTo('intro')">🌟 Intro</button>
+          <button class="cell-nav-link" onclick="navigateTo('terminology')">📖 Terminology</button>
+          <button class="cell-nav-link" onclick="navigateTo('skills')">🎯 Skills</button>
+          <button class="cell-nav-link" onclick="navigateTo('exam-edge')">⚡ Exam Edge</button>
+        </div>
+      </nav>
+
+      <div class="cell-hero">
+        <h1 class="cell-hero-title">Chemical Coordination <span style="color:#8bde4f">Essentials</span></h1>
+        <p class="cell-hero-sub">Get started with the 6 big questions (5W1H) and prerequisites before diving into hormones.</p>
+      </div>
+
+      <main style="max-width:1200px; margin:0 auto; padding:40px 24px;">
+        
+        <!-- Prerequisites -->
+        <section style="margin-bottom:60px">
+          <h2 style="font-family:'Outfit', sans-serif; font-size:28px; font-weight:900; margin-bottom:24px; text-align:center; color:var(--cell-indigo)">Prerequisites</h2>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px">
+            <div style="background:#fff; padding:32px 24px; border-radius:24px; border:1px solid #e2e8f0; text-align:center; box-shadow:0 4px 6px -1px rgba(0,0,0,0.05)">
+              <div style="font-size:40px; margin-bottom:16px">🧠</div>
+              <h3 style="font-size:20px; font-weight:900; margin:0 0 8px; color:var(--cell-text)">Neural System (Ch. 21)</h3>
+              <p style="font-size:15px; color:var(--cell-muted); margin:0; line-height:1.6">Point-to-point fast coordination, short-lived impulse transmission vs slow, long-lasting hormonal blood regulation.</p>
+            </div>
+            <div style="background:#fff; padding:32px 24px; border-radius:24px; border:1px solid #e2e8f0; text-align:center; box-shadow:0 4px 6px -1px rgba(0,0,0,0.05)">
+              <div style="font-size:40px; margin-bottom:16px">🧬</div>
+              <h3 style="font-size:20px; font-weight:900; margin:0 0 8px; color:var(--cell-text)">Biomolecules (Ch. 9)</h3>
+              <p style="font-size:15px; color:var(--cell-muted); margin:0; line-height:1.6">Chemical classes of organic molecules: proteins/peptides, steroid rings, iodinated amino acids, and catecholamines.</p>
+            </div>
+            <div style="background:#fff; padding:32px 24px; border-radius:24px; border:1px solid #e2e8f0; text-align:center; box-shadow:0 4px 6px -1px rgba(0,0,0,0.05)">
+              <div style="font-size:40px; margin-bottom:16px">🔬</div>
+              <h3 style="font-size:20px; font-weight:900; margin:0 0 8px; color:var(--cell-text)">Cell Membrane &amp; Signaling</h3>
+              <p style="font-size:15px; color:var(--cell-muted); margin:0; line-height:1.6">Receptors, signal transduction, second messengers (cAMP, IP3, Ca²⁺) and nuclear transcription factor binding.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6 Big Questions -->
+        <h2 style="font-family:'Outfit', sans-serif; font-size:28px; font-weight:900; margin-bottom:32px; text-align:center; color:var(--cell-indigo)">6 Big Questions</h2>
+        <div class="cell-grid" style="padding:0">
+          
+          <div class="cell-intro-card" onclick="toggleIntroCard(this)">
+            <div style="height:6px; background:linear-gradient(90deg, #6366f1, #818cf8)"></div>
+            <div class="cell-intro-card-header">
+              <div class="cell-intro-card-icon" style="background:linear-gradient(135deg, #6366f1, #818cf8); box-shadow:0 4px 14px rgba(99,102,241,0.3)">❓</div>
+              <div style="flex:1">
+                <div class="cell-intro-card-q" style="color:#6366f1">What</div>
+                <div style="font-size:13px; font-weight:600; color:#64748b">are Hormones?</div>
+              </div>
+              <div style="color:#94a3b8; transition:transform 0.3s">▼</div>
+            </div>
+            <div class="cell-intro-card-body">
+              <p class="cell-intro-card-content">Hormones are non-nutrient chemicals which act as intercellular messengers and are produced in trace amounts by ductless endocrine glands and diffused tissues.</p>
+              <div class="cell-intro-card-fact"><span style="color:#6366f1; font-weight:800">⭐ Classical Definition: </span>Chemical produced by endocrine glands, released into blood, and transported to distantly located target organs.</div>
+            </div>
+          </div>
+
+          <div class="cell-intro-card" onclick="toggleIntroCard(this)">
+            <div style="height:6px; background:linear-gradient(90deg, #0d9488, #14b8a6)"></div>
+            <div class="cell-intro-card-header">
+              <div class="cell-intro-card-icon" style="background:linear-gradient(135deg, #0d9488, #14b8a6); box-shadow:0 4px 14px rgba(13,148,136,0.3)">💡</div>
+              <div style="flex:1">
+                <div class="cell-intro-card-q" style="color:#0d9488">Why</div>
+                <div style="font-size:13px; font-weight:600; color:#64748b">do we need Endocrine Coordination?</div>
+              </div>
+              <div style="color:#94a3b8; transition:transform 0.3s">▼</div>
+            </div>
+            <div class="cell-intro-card-body">
+              <p class="cell-intro-card-content">Nerve fibres do not innervate all cells of the body. Continuous regulation of cellular functions like metabolism, growth, electrolyte balance, and reproduction requires chemical coordination.</p>
+              <div class="cell-intro-card-fact"><span style="color:#0d9488; font-weight:800">⭐ Key Concept: </span>The neural system and endocrine system jointly coordinate and regulate all physiological functions.</div>
+            </div>
+          </div>
+
+          <div class="cell-intro-card" onclick="toggleIntroCard(this)">
+            <div style="height:6px; background:linear-gradient(90deg, #7c3aed, #a78bfa)"></div>
+            <div class="cell-intro-card-header">
+              <div class="cell-intro-card-icon" style="background:linear-gradient(135deg, #7c3aed, #a78bfa); box-shadow:0 4px 14px rgba(124,58,237,0.3)">👤</div>
+              <div style="flex:1">
+                <div class="cell-intro-card-q" style="color:#7c3aed">Who</div>
+                <div style="font-size:13px; font-weight:600; color:#64748b">controls the Endocrine Cascade?</div>
+              </div>
+              <div style="color:#94a3b8; transition:transform 0.3s">▼</div>
+            </div>
+            <div class="cell-intro-card-body">
+              <p class="cell-intro-card-content">The Hypothalamus (basal part of diencephalon) contains neurosecretory nuclei producing releasing &amp; inhibiting hormones that command the Pituitary gland.</p>
+              <div class="cell-intro-card-fact"><span style="color:#7c3aed; font-weight:800">⭐ Master Gland: </span>The pituitary resides in sella tursica and regulates thyroid, adrenal cortex, and gonads.</div>
+            </div>
+          </div>
+
+          <div class="cell-intro-card" onclick="toggleIntroCard(this)">
+            <div style="height:6px; background:linear-gradient(90deg, #f59e0b, #fbbf24)"></div>
+            <div class="cell-intro-card-header">
+              <div class="cell-intro-card-icon" style="background:linear-gradient(135deg, #f59e0b, #fbbf24); box-shadow:0 4px 14px rgba(245,158,11,0.3)">📍</div>
+              <div style="flex:1">
+                <div class="cell-intro-card-q" style="color:#f59e0b">Where</div>
+                <div style="font-size:13px; font-weight:600; color:#64748b">are glands located?</div>
+              </div>
+              <div style="color:#94a3b8; transition:transform 0.3s">▼</div>
+            </div>
+            <div class="cell-intro-card-body">
+              <p class="cell-intro-card-content">Organised endocrine glands: Hypothalamus, Pituitary, Pineal (brain); Thyroid/Parathyroid (neck); Thymus (chest); Adrenal &amp; Pancreas (abdomen); Gonads. Non-endocrine organs: Heart, Kidney, GI tract.</p>
+              <div class="cell-intro-card-fact"><span style="color:#f59e0b; font-weight:800">⭐ Diagram Alert: </span>NCERT Figure 19.1 shows all 10 major gland locations in the human body.</div>
+            </div>
+          </div>
+
+          <div class="cell-intro-card" onclick="toggleIntroCard(this)">
+            <div style="height:6px; background:linear-gradient(90deg, #3b82f6, #60a5fa)"></div>
+            <div class="cell-intro-card-header">
+              <div class="cell-intro-card-icon" style="background:linear-gradient(135deg, #3b82f6, #60a5fa); box-shadow:0 4px 14px rgba(59,130,246,0.3)">⏰</div>
+              <div style="flex:1">
+                <div class="cell-intro-card-q" style="color:#3b82f6">When</div>
+                <div style="font-size:13px; font-weight:600; color:#64748b">are hormones secreted?</div>
+              </div>
+              <div style="color:#94a3b8; transition:transform 0.3s">▼</div>
+            </div>
+            <div class="cell-intro-card-body">
+              <p class="cell-intro-card-content">Secretion responds to physiological cues: Melatonin during 24-hr diurnal sleep-wake cycle; Catecholamines during acute emergency stress; Insulin/Glucagon during blood glucose fluctuations.</p>
+              <div class="cell-intro-card-fact"><span style="color:#3b82f6; font-weight:800">⭐ Emergency Hormones: </span>Adrenaline &amp; Noradrenaline from adrenal medulla trigger fight-or-flight responses.</div>
+            </div>
+          </div>
+
+          <div class="cell-intro-card" onclick="toggleIntroCard(this)">
+            <div style="height:6px; background:linear-gradient(90deg, #ec4899, #f472b6)"></div>
+            <div class="cell-intro-card-header">
+              <div class="cell-intro-card-icon" style="background:linear-gradient(135deg, #ec4899, #f472b6); box-shadow:0 4px 14px rgba(236,72,153,0.3)">🔍</div>
+              <div style="flex:1">
+                <div class="cell-intro-card-q" style="color:#ec4899">How</div>
+                <div style="font-size:13px; font-weight:600; color:#64748b">do hormones work at cellular level?</div>
+              </div>
+              <div style="color:#94a3b8; transition:transform 0.3s">▼</div>
+            </div>
+            <div class="cell-intro-card-body">
+              <p class="cell-intro-card-content">Hormones bind specific receptors. Peptide hormones bind membrane receptors generating 2nd messengers (cAMP, IP3, Ca²⁺). Steroids &amp; Thyroid hormones bind nuclear receptors regulating gene expression.</p>
+              <div class="cell-intro-card-fact"><span style="color:#ec4899; font-weight:800">⭐ 4 Chemical Groups: </span>1. Peptides, 2. Steroids, 3. Iodothyronines, 4. Amino-acid derivatives.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top:60px; padding:32px; background:linear-gradient(135deg, #1e1b4b, #312e81); border-radius:24px; color:#fff; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px">
+          <div>
+            <h3 style="font-size:20px; font-weight:800; margin:0 0 4px">Ready to master the vocabulary?</h3>
+            <p style="margin:0; opacity:.85">Next up: Key terms, 5 Golden Rules &amp; interactive flashcards.</p>
+          </div>
+          <button onclick="navigateTo('terminology')" style="padding:12px 28px; background:#fff; color:#1e1b4b; border:none; border-radius:100px; font-weight:800; cursor:pointer">Terminology Lexicon →</button>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- VIEW 4: TERMINOLOGY -->
+  <div id="view-terminology" class="app-view">
+    <div class="cell-page">
+      <nav class="cell-nav">
+        <button class="cell-nav-back" onclick="navigateTo('dashboard')">← Back to Dashboard</button>
+        <div class="cell-nav-links">
+          <button class="cell-nav-link" onclick="navigateTo('connectomics')">🧠 Connectomics</button>
+          <button class="cell-nav-link" onclick="navigateTo('intro')">🌟 Intro</button>
+          <button class="cell-nav-link active" onclick="navigateTo('terminology')">📖 Terminology</button>
+          <button class="cell-nav-link" onclick="navigateTo('skills')">🎯 Skills</button>
+          <button class="cell-nav-link" onclick="navigateTo('exam-edge')">⚡ Exam Edge</button>
+        </div>
+      </nav>
+
+      <div class="cell-lexicon-container">
+        <div style="display:flex; flex-direction:column; align-items:center; text-align:center; margin-bottom:30px">
+          <h1 style="font-family:'Outfit', sans-serif; font-size:3.5rem; font-weight:900; color:var(--cell-text); margin:0 0 12px; letter-spacing:-0.02em">
+            Endocrine <span style="background:linear-gradient(135deg, var(--cell-indigo), var(--cell-violet)); -webkit-background-clip:text; -webkit-text-fill-color:transparent">Lexicon</span>
+          </h1>
+          <p id="lexicon-subhead" style="font-size:18px; font-weight:500; color:var(--cell-muted); max-width:650px; line-height:1.6">
+            Explore core hormone terms, NCERT definitions, and 5 Golden NEET Rules.
+          </p>
+        </div>
+
+        <div style="display:flex; justify-content:center; gap:12px; margin-bottom:32px; flex-wrap:wrap">
+          <button id="tab-terms" class="cell-nav-link active" onclick="switchLexiconTab('terms')">📚 Key Terms (12)</button>
+          <button id="tab-rules" class="cell-nav-link" onclick="switchLexiconTab('rules')">📏 5 Golden Rules</button>
+          <button id="tab-quiz" class="cell-nav-link" onclick="switchLexiconTab('quiz')">🧪 Quiz Time</button>
+        </div>
+
+        <div id="lexicon-content-main" class="cell-lexicon-grid">
+          <!-- Sidebar selector -->
+          <aside id="lexicon-sidebar" class="cell-selector-container">
+            <!-- Rendered dynamically -->
+          </aside>
+
+          <!-- Main Details window -->
+          <main id="lexicon-details" class="cell-details-window">
+            <!-- Rendered dynamically -->
+          </main>
+        </div>
+
+        <div id="lexicon-quiz-section" class="cell-quiz-window" style="display:none">
+          <!-- Rendered dynamically -->
+        </div>
+
+        <div style="margin-top:40px; text-align:center">
+          <button onclick="navigateTo('skills')" style="padding:12px 32px; font-size:16px; background:#fff; color:#0f172a; border:1px solid #e2e8f0; border-radius:100px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:8px; box-shadow:0 2px 4px rgba(0,0,0,0.05)">
+            Next Topic: Skills &amp; Mastery <span style="color:var(--cell-indigo)">→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIEW 5: SKILLS -->
+  <div id="view-skills" class="app-view">
+    <div class="core-skills-view">
+      <div class="core-skills-head">
+        <h1>Core <span>Skills</span></h1>
+        <p>Choose a skill below. Read the lesson, practice to build confidence,<br>and take the assessment to earn your mastery!</p>
+      </div>
+      <div id="skills-list-container" class="core-skills-list"></div>
+    </div>
+  </div>
+
+  <!-- VIEW 6: EXAM EDGE -->
+  <div id="view-exam-edge" class="app-view">
+    <div class="cell-page">
+      <nav class="cell-nav">
+        <button class="cell-nav-back" onclick="navigateTo('dashboard')">← Back to Dashboard</button>
+        <div class="cell-nav-links">
+          <button class="cell-nav-link" onclick="navigateTo('connectomics')">🧠 Connectomics</button>
+          <button class="cell-nav-link" onclick="navigateTo('intro')">🌟 Intro</button>
+          <button class="cell-nav-link" onclick="navigateTo('terminology')">📖 Terminology</button>
+          <button class="cell-nav-link" onclick="navigateTo('skills')">🎯 Skills</button>
+          <button class="cell-nav-link active" onclick="navigateTo('exam-edge')">⚡ Exam Edge</button>
+        </div>
+      </nav>
+
+      <div class="cell-hero">
+        <h1 class="cell-hero-title">Chemical Coordination <span style="color:#ef4444">Exam Edge</span></h1>
+        <p class="cell-hero-sub">Strategic insights, high-yield revision cards, student-interactive practice modes &amp; instant corrections.</p>
+      </div>
+
+      <main style="max-width:1100px; margin:0 auto; padding:40px 24px;">
+        
+        <!-- Practice Mode Selection Tabs -->
+        <div style="display:flex; justify-content:center; gap:10px; margin-bottom:40px; flex-wrap:wrap">
+          <button id="exam-mode-mcqs-btn" onclick="switchExamMode('mcqs')" style="padding:12px 20px; border-radius:100px; border:2px solid #ef4444; background:#ef444415; color:#ef4444; font-weight:800; cursor:pointer; display:flex; align-items:center; gap:8px">
+            <span>🧪</span> NEET MCQs
+          </button>
+          <button id="exam-mode-blanks-btn" onclick="switchExamMode('blanks')" style="padding:12px 20px; border-radius:100px; border:2px solid #e2e8f0; background:#fff; color:#64748b; font-weight:800; cursor:pointer; display:flex; align-items:center; gap:8px">
+            <span>✍️</span> Student Interactive Fill in the Blanks
+          </button>
+          <button id="exam-mode-match-btn" onclick="switchExamMode('match')" style="padding:12px 20px; border-radius:100px; border:2px solid #e2e8f0; background:#fff; color:#64748b; font-weight:800; cursor:pointer; display:flex; align-items:center; gap:8px">
+            <span>🔗</span> Student Interactive Match the Following
+          </button>
+          <button id="exam-mode-exercises-btn" onclick="switchExamMode('exercises')" style="padding:12px 20px; border-radius:100px; border:2px solid #e2e8f0; background:#fff; color:#64748b; font-weight:800; cursor:pointer; display:flex; align-items:center; gap:8px">
+            <span>📘</span> NCERT Exercises
+          </button>
+        </div>
+
+        <!-- Dynamic Exam Mode Content Window -->
+        <div id="exam-mode-window" style="margin-bottom:40px">
+          <!-- Rendered via JS -->
+        </div>
+
+        <!-- High-Yield Revision Cards -->
+        <div style="background:#fff; border-radius:32px; padding:40px; box-shadow:0 12px 32px rgba(0,0,0,0.04); border:1px solid #e2e8f0; margin-bottom:40px">
+          <h2 style="font-size:24px; font-weight:900; color:#1e1b4b; margin-bottom:8px; display:flex; align-items:center; gap:12px">
+            <span style="background:#fee2e8; padding:10px; border-radius:12px; color:#dc2626">⚡</span> High-Yield Quick Revision Cards
+          </h2>
+          <p style="color:#64748b; font-size:15px; margin-bottom:32px; padding-left:56px">Everything critical for last-minute review — hormone functions, disorders &amp; NEET traps.</p>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px">
+            
+            <div style="background:#f8fafc; border-radius:20px; padding:24px; border:1px solid #e2e8f0">
+              <h3 style="font-size:18px; font-weight:800; color:#1e1b4b; margin-bottom:16px; padding-bottom:12px; border-bottom:2px solid #e2e8f0">🧠 Hypothalamus &amp; Pituitary</h3>
+              <p style="font-size:15px; color:#334155; line-height:1.65; white-space:pre-line">• GnRH stimulates, Somatostatin inhibits GH.
+• Pituitary in sella tursica attached by stalk.
+• Anterior (pars distalis): GH, PRL, TSH, ACTH, LH, FSH.
+• Pars intermedia: MSH (melanocytes).
+• Posterior (pars nervosa): Oxytocin &amp; ADH (synthesised by hypothalamus).</p>
+            </div>
+
+            <div style="background:#f8fafc; border-radius:20px; padding:24px; border:1px solid #e2e8f0">
+              <h3 style="font-size:18px; font-weight:800; color:#1e1b4b; margin-bottom:16px; padding-bottom:12px; border-bottom:2px solid #e2e8f0">🦋 Thyroid &amp; Parathyroid</h3>
+              <p style="font-size:15px; color:#334155; line-height:1.65; white-space:pre-line">• T3 &amp; T4 regulate BMR, RBC formation, nutrients.
+• Goitre (iodine deficiency), Cretinism (maternal hypo).
+• Graves' disease: hyperthyroidism, protruding eyes, high BMR.
+• TCT (Thyrocalcitonin) lowers blood Ca²⁺.
+• PTH (Parathyroid) increases blood Ca²⁺ (hypercalcemic).</p>
+            </div>
+
+            <div style="background:#f8fafc; border-radius:20px; padding:24px; border:1px solid #e2e8f0">
+              <h3 style="font-size:18px; font-weight:800; color:#1e1b4b; margin-bottom:16px; padding-bottom:12px; border-bottom:2px solid #e2e8f0">⚡ Adrenal Gland</h3>
+              <p style="font-size:15px; color:#334155; line-height:1.65; white-space:pre-line">• Medulla: Epinephrine &amp; Norepinephrine (catecholamines).
+• Emergency hormones for Fight or Flight.
+• Cortex layers: Zona reticularis (inner), fasciculata (mid), glomerulosa (outer).
+• Glucocorticoid: Cortisol (anti-inflammatory).
+• Mineralocorticoid: Aldosterone (Na+ &amp; water retention).
+• Addison's disease: cortex underproduction.</p>
+            </div>
+
+            <div style="background:#f8fafc; border-radius:20px; padding:24px; border:1px solid #e2e8f0">
+              <h3 style="font-size:18px; font-weight:800; color:#1e1b4b; margin-bottom:16px; padding-bottom:12px; border-bottom:2px solid #e2e8f0">🩸 Pancreas &amp; Glucose</h3>
+              <p style="font-size:15px; color:#334155; line-height:1.65; white-space:pre-line">• Islets of Langerhans (1-2 million cells, 1-2% tissue).
+• α-cells: Glucagon (glycogenolysis &amp; gluconeogenesis → hyperglycemic).
+• β-cells: Insulin (glucose uptake &amp; glycogenesis → hypoglycemic).
+• Diabetes Mellitus: prolonged hyperglycemia, glucosuria, ketone bodies.</p>
+            </div>
+
+            <div style="background:#f8fafc; border-radius:20px; padding:24px; border:1px solid #e2e8f0">
+              <h3 style="font-size:18px; font-weight:800; color:#1e1b4b; margin-bottom:16px; padding-bottom:12px; border-bottom:2px solid #e2e8f0">🧪 Non-Endocrine Organs</h3>
+              <p style="font-size:15px; color:#334155; line-height:1.65; white-space:pre-line">• Heart atrium: ANF (lowers blood pressure via vasodilation).
+• Kidney JGA: Erythropoietin (stimulates erythropoiesis).
+• GI Tract: Gastrin (HCl/pepsinogen), Secretin (bicarbonate), CCK (pancreatic enzymes/bile), GIP (inhibits gastric secretion).</p>
+            </div>
+
+            <div style="background:#f8fafc; border-radius:20px; padding:24px; border:1px solid #e2e8f0">
+              <h3 style="font-size:18px; font-weight:800; color:#1e1b4b; margin-bottom:16px; padding-bottom:12px; border-bottom:2px solid #e2e8f0">⚠️ Top NEET Traps</h3>
+              <p style="font-size:15px; color:#334155; line-height:1.65; white-space:pre-line">• Diabetes Insipidus (ADH deficiency) ≠ Diabetes Mellitus (Insulin deficiency).
+• Oxytocin &amp; ADH are synthesised in Hypothalamus, stored in Posterior Pituitary.
+• PTH is hypercalcemic; TCT is hypocalcemic.
+• Catecholamines increase glycogen breakdown (hyperglycemic effect).</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Master Comparison Tables -->
+        <div style="background:#fff; border-radius:32px; padding:40px; box-shadow:0 12px 32px rgba(0,0,0,0.04); border:1px solid #e2e8f0; margin-bottom:40px">
+          <h2 style="font-size:24px; font-weight:900; color:#1e1b4b; margin-bottom:24px; display:flex; align-items:center; gap:12px">
+            <span style="background:#fef3c7; padding:10px; border-radius:12px; color:#d97706">📊</span> Master Comparison — Chemical Classes of Hormones
+          </h2>
+          <div style="overflow-x:auto">
+            <table style="width:100%; border-collapse:collapse; text-align:left; min-width:750px">
+              <thead>
+                <tr style="background:#f8fafc; border-bottom:2px solid #e2e8f0">
+                  <th style="padding:16px; font-size:14px; color:#64748b; font-weight:800; text-transform:uppercase">Chemical Class</th>
+                  <th style="padding:16px; font-size:14px; color:#64748b; font-weight:800; text-transform:uppercase">Hormone Examples</th>
+                  <th style="padding:16px; font-size:14px; color:#64748b; font-weight:800; text-transform:uppercase">Receptor Location</th>
+                  <th style="padding:16px; font-size:14px; color:#64748b; font-weight:800; text-transform:uppercase">Mechanism of Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom:1px solid #f1f5f9; background:#fff">
+                  <td style="padding:16px; font-weight:800; color:#1e1b4b">Peptide / Protein</td>
+                  <td style="padding:16px; color:#334155">Insulin, Glucagon, Pituitary, Hypothalamic hormones, TCT, PTH</td>
+                  <td style="padding:16px; color:#334155">Membrane-bound</td>
+                  <td style="padding:16px; color:#334155">Generate 2nd messengers (cAMP, IP3, Ca²⁺)</td>
+                </tr>
+                <tr style="border-bottom:1px solid #f1f5f9; background:#f8fafc">
+                  <td style="padding:16px; font-weight:800; color:#1e1b4b">Steroids</td>
+                  <td style="padding:16px; color:#334155">Cortisol, Testosterone, Estradiol, Progesterone, Aldosterone</td>
+                  <td style="padding:16px; color:#334155">Intracellular / Nuclear</td>
+                  <td style="padding:16px; color:#334155">Regulate gene expression &amp; chromosome function</td>
+                </tr>
+                <tr style="border-bottom:1px solid #f1f5f9; background:#fff">
+                  <td style="padding:16px; font-weight:800; color:#1e1b4b">Iodothyronines</td>
+                  <td style="padding:16px; color:#334155">Thyroid hormones (T3, T4)</td>
+                  <td style="padding:16px; color:#334155">Intracellular / Nuclear</td>
+                  <td style="padding:16px; color:#334155">Interact with genome to modulate protein synthesis</td>
+                </tr>
+                <tr style="border-bottom:1px solid #f1f5f9; background:#f8fafc">
+                  <td style="padding:16px; font-weight:800; color:#1e1b4b">Amino-acid Derivatives</td>
+                  <td style="padding:16px; color:#334155">Epinephrine, Norepinephrine (Catecholamines)</td>
+                  <td style="padding:16px; color:#334155">Membrane-bound</td>
+                  <td style="padding:16px; color:#334155">Rapid enzyme activation via second messengers</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div style="margin-top:40px; text-align:center">
+          <button onclick="navigateTo('dashboard')" style="padding:12px 32px; font-size:16px; background:#10b981; color:#fff; border:none; border-radius:100px; font-weight:800; cursor:pointer; display:inline-flex; align-items:center; gap:8px; box-shadow:0 4px 14px rgba(16,185,129,0.4)">
+            Finish Topic &amp; Return to Dashboard <span style="color:#fff">✓</span>
+          </button>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT ENGINE -->
+  <script>
+    // -------------------------------------------------------------
+    // DATA DECLARATIONS
+    // -------------------------------------------------------------
+    const termsData = [
+      { name: "Endocrine vs Exocrine", color: "#6366f1", icon: "🩺", def: "Endocrine glands lack ducts and secrete hormones directly into blood. Exocrine glands possess ducts to release secretions locally.", examples: ["Pituitary, Thyroid (Endocrine)", "Salivary, Sweat glands (Exocrine)", "Pancreas (Composite: Exocrine + Endocrine)"], inUse: "Pancreas acts as an exocrine gland for digestive enzymes and endocrine gland for insulin/glucagon.", memory: 'Endo = "Inside" (blood), Exo = "Outside" (via ducts).' },
+      { name: "Hormone", color: "#0d9488", icon: "🧪", def: "Non-nutrient chemicals which act as intercellular messengers and are produced in trace amounts.", examples: ["Peptides (Insulin)", "Steroids (Cortisol)", "Amino acid derivatives (Epinephrine)"], inUse: "Classical definition required production by endocrine glands; current definition covers all non-nutrient intercellular chemical messengers.", memory: "Non-nutrient + Intercellular messenger + Trace amounts." },
+      { name: "Hypothalamus", color: "#7c3aed", icon: "🧠", def: "The basal part of diencephalon containing neurosecretory cells (nuclei) that produce releasing and inhibiting hormones.", examples: ["GnRH (stimulates gonadotrophins)", "Somatostatin (inhibits growth hormone)"], inUse: "Hypothalamus reaches anterior pituitary via portal circulatory system, and neurohypophysis via direct axonal transport.", memory: "The Master of the Master Gland!" },
+      { name: "Pituitary Gland", color: "#f59e0b", icon: "👑", def: "Small endocrine gland located in a bony cavity called sella tursica, attached to hypothalamus by a stalk.", examples: ["Adenohypophysis (GH, TSH, ACTH, LH, FSH, PRL, MSH)", "Neurohypophysis (Oxytocin, ADH/Vasopressin)"], inUse: "Hypothalamic neurons synthesise oxytocin and vasopressin and transport them axonally to neurohypophysis for storage.", memory: "Pars distalis + Pars intermedia + Pars nervosa." },
+      { name: "Catecholamines", color: "#ef4444", icon: "⚡", def: "Rapidly secreted emergency hormones produced by the adrenal medulla during stress or danger.", examples: ["Adrenaline (Epinephrine)", "Noradrenaline (Norepinephrine)"], inUse: "They trigger piloerection, pupillary dilation, increased heartbeat, sweating, and glycogen breakdown.", memory: 'The "Fight or Flight" 3F hormones (Fright, Fight, Flight).' },
+      { name: "Corticoids", color: "#ec4899", icon: "🧱", def: "Steroid hormones produced by the three layers of the adrenal cortex (zona glomerulosa, fasciculata, reticularis).", examples: ["Cortisol (Glucocorticoid)", "Aldosterone (Mineralocorticoid)"], inUse: "Cortisol regulates carbohydrate metabolism and suppresses immunity; Aldosterone regulates electrolyte and water balance.", memory: "Sugar (Cortisol) + Salt (Aldosterone) + Sex (Androgens)." },
+      { name: "Insulin & Glucagon", color: "#3b82f6", icon: "🩸", def: "Peptide hormones produced by pancreatic Islets of Langerhans regulating blood glucose homeostasis.", examples: ["β-cells secrete Insulin (hypoglycemic)", "α-cells secrete Glucagon (hyperglycemic)"], inUse: "Glucagon stimulates glycogenolysis and gluconeogenesis; Insulin stimulates cellular glucose uptake and glycogenesis.", memory: "Insulin puts glucose IN cells; Glucagon makes glucose GO UP." },
+      { name: "ADH / Vasopressin", color: "#10b981", icon: "💧", def: "Hypothalamic peptide hormone stored in posterior pituitary that stimulates water reabsorption in renal distal tubules.", examples: ["Deficiency leads to Diabetes Insipidus"], inUse: "ADH reduces diuresis (water loss in urine); lack of ADH causes severe dehydration.", memory: "Anti-Diuretic Hormone = Anti-Water-Loss Hormone." },
+      { name: "PTH & TCT", color: "#8b5cf6", icon: "🦴", def: "Antagonistic calcium-regulating hormones from parathyroid (PTH) and thyroid (Thyrocalcitonin/TCT).", examples: ["PTH (raises blood Ca²⁺)", "TCT (lowers blood Ca²⁺)"], inUse: "PTH stimulates bone resorption, renal Ca²⁺ reabsorption, and gut Ca²⁺ absorption.", memory: "PTH = Hypercalcemic | TCT = Hypocalcemic." },
+      { name: "ANF (Atrial Factor)", color: "#14b8a6", icon: "🫀", def: "Peptide hormone secreted by heart atrial wall when blood pressure rises, causing vasodilation.", examples: ["Decreases blood pressure"], inUse: "ANF dilates blood vessels to reduce elevated blood pressure, acting opposite to vasoconstrictors.", memory: "Heart's emergency pressure-release valve!" },
+      { name: "Second Messengers", color: "#d97706", icon: "🔄", def: "Intracellular signal molecules generated when non-permeable peptide hormones bind cell membrane receptors.", examples: ["Cyclic AMP (cAMP)", "IP3 (Inositol triphosphate)", "Calcium ions (Ca²⁺)"], inUse: "Membrane-bound receptor binding generates cAMP, which initiates downstream enzymatic cascades.", memory: "First messenger = Hormone outside; Second messenger = Signal inside." },
+      { name: "Hormone Receptors", color: "#059669", icon: "🔑", def: "Specific protein molecules located on target cell membrane or inside cytoplasm/nucleus that bind hormones.", examples: ["Membrane-bound receptors (Peptides)", "Intracellular/Nuclear receptors (Steroids, Thyroid)"], inUse: "Binding forms a hormone-receptor complex, producing biochemical changes in target tissues.", memory: "Key (Hormone) fits Lock (Receptor) specifically." }
+    ];
+
+    const rulesData = [
+      { num: 1, title: "Hyper vs Hypo Glycemic", rule: "Glucagon raises blood glucose (hyperglycemic) | Insulin lowers blood glucose (hypoglycemic).", emoji: "🩸", color: "#6366f1", detail: "Glucagon (from pancreatic α-cells) acts on hepatocytes to stimulate glycogenolysis and gluconeogenesis. Insulin (from β-cells) acts on hepatocytes & adipocytes to enhance glucose uptake and glycogenesis.", examples: ["Prolonged hyperglycemia → Diabetes Mellitus", "Loss of glucose in urine (glucosuria) + ketone bodies"], tip: 'NEET Question Trap: Glucagon is HYPER-glycemic, Insulin is HYPO-glycemic. Don\'t flip them!' },
+      { num: 2, title: "Calcium Homeostasis", rule: "PTH increases blood Ca²⁺ (hypercalcemic) | TCT decreases blood Ca²⁺ (hypocalcemic).", emoji: "🦴", color: "#0d9488", detail: "Parathyroid hormone (PTH) acts on bones to stimulate bone resorption (demineralisation), increases renal tubule Ca²⁺ reabsorption and gut Ca²⁺ absorption. Thyrocalcitonin (TCT) from thyroid lowers blood Ca²⁺.", examples: ["PTH + TCT jointly maintain calcium balance", "PTH acts directly on osteoclasts"], tip: "Remember: Parathyroid = Hypercalcemic. Thyroid TCT = Hypocalcemic." },
+      { num: 3, title: "Thyroid Traps & Disorders", rule: "Iodine deficiency → Goitre | Maternal hypo → Cretinism | Hyperthyroidism → Graves' Disease.", emoji: "🦋", color: "#f59e0b", detail: "Thyroid synthesises T3 and T4 using iodine. Hypothyroidism in pregnancy causes defective development of baby (cretinism: stunted growth, mental retardation, deaf-mutism). Exophthalmic goitre (Graves' disease) involves enlarged thyroid, protruding eyeballs, high BMR, and weight loss.", examples: ["Simple Goitre (enlarged neck due to low iodine)", "Graves' Disease (autoimmune hyperthyroidism)"], tip: "Cretinism is caused by HYPO-thyroidism during pregnancy, NOT hyper-." },
+      { num: 4, title: "Fight-or-Flight & Stress", rule: "Adrenal medulla secretes Catecholamines | Adrenal cortex underproduction causes Addison's Disease.", emoji: "⚡", color: "#ef4444", detail: "Adrenaline and Noradrenaline increase heart rate, respiration, sweating, piloerection, and glycogen breakdown during emergency stress. Adrenal cortex secretes Cortisol (carbohydrate corticoid) and Aldosterone (Na+ retention). Deficiency of cortex hormones alters carbohydrate metabolism causing acute fatigue (Addison's disease).", examples: ["Piloerection (goosebumps)", "Glycogenolysis → increased blood glucose"], tip: "Catecholamines = Medulla | Corticoids = Cortex." },
+      { num: 5, title: "Fluid & Pressure Regulation", rule: "ADH reduces water loss in urine | ANF from heart lowers blood pressure via vasodilation.", emoji: "💧", color: "#7c3aed", detail: "ADH (Vasopressin from posterior pituitary) acts on distal renal tubules to reabsorb water, preventing diuresis. ADH deficiency leads to Diabetes Insipidus (water loss & dehydration). ANF from heart atria dilates blood vessels to reduce high blood pressure.", examples: ["Diabetes Insipidus (lack of ADH, no glucosuria)", "ANF opposes vasoconstrictor pathways"], tip: "Diabetes Mellitus = Insulin issue (sugar in urine). Diabetes Insipidus = ADH issue (watery urine)." }
+    ];
+
+    const quizData = [
+      { question: "Which hormone is secreted by pancreatic α-cells to raise blood glucose levels?", options: ["Insulin", "Glucagon", "Somatostatin", "Cortisol"], correct: 1, explanation: "Pancreatic α-cells secrete Glucagon, which stimulates glycogenolysis and gluconeogenesis, making it a hyperglycemic hormone." },
+      { question: "Which condition results from deficiency of Anti-Diuretic Hormone (ADH)?", options: ["Diabetes Mellitus", "Acromegaly", "Diabetes Insipidus", "Addison's Disease"], correct: 2, explanation: "Impairment of ADH synthesis or release impairs renal water reabsorption, leading to excessive water loss called Diabetes Insipidus." },
+      { question: "Which of the following is a hypercalcemic hormone?", options: ["Thyrocalcitonin (TCT)", "Parathyroid Hormone (PTH)", "Aldosterone", "Melatonin"], correct: 1, explanation: "Parathyroid Hormone (PTH) increases blood Ca²⁺ levels by stimulating bone resorption, renal Ca²⁺ reabsorption, and gut absorption." },
+      { question: "Exophthalmic goitre (Graves' disease) is characterized by:", options: ["Hypothyroidism and weight gain", "Hyperthyroidism, protruding eyeballs, and increased BMR", "Adrenal cortex failure", "Insulin resistance"], correct: 1, explanation: "Graves' disease is a form of hyperthyroidism characterized by thyroid enlargement, protruding eyeballs (exophthalmos), increased BMR, and weight loss." },
+      { question: "Which gland secretes melatonin to regulate diurnal 24-hour sleep-wake rhythms?", options: ["Pituitary Gland", "Pineal Gland", "Thymus", "Thyroid Gland"], correct: 1, explanation: "The Pineal gland located on the dorsal side of forebrain secretes melatonin, regulating body diurnal rhythms and sleep-wake cycles." },
+      { question: "Adrenaline and Noradrenaline are chemically categorized as:", options: ["Steroids", "Iodothyronines", "Catecholamines", "Polypeptides"], correct: 2, explanation: "Epinephrine (adrenaline) and norepinephrine are amino-acid derivative emergency hormones collectively called catecholamines." },
+      { question: "Which hormone is produced by the heart atria to lower blood pressure?", options: ["Erythropoietin", "ANF (Atrial Natriuretic Factor)", "Renin", "Gastrin"], correct: 1, explanation: "Atrial wall of heart secretes ANF when blood pressure rises; ANF causes blood vessel dilation, reducing blood pressure." },
+      { question: "The adrenal cortex layer responsible for secreting mineralocorticoids like Aldosterone is:", options: ["Zona reticularis", "Zona fasciculata", "Zona glomerulosa", "Adrenal medulla"], correct: 2, explanation: "The outer layer of adrenal cortex is zona glomerulosa (mineralocorticoids), middle is zona fasciculata (glucocorticoids), inner is zona reticularis (androgens)." },
+      { question: "Hormones like steroid hormones and iodothyronines act primarily by:", options: ["Generating second messengers like cAMP", "Binding intracellular/nuclear receptors to regulate gene expression", "Directly opening ion channels on cell membrane", "Stimulating exocytosis of Golgi vesicles"], correct: 1, explanation: "Lipid-soluble steroid hormones and iodothyronines cross cell membranes to bind intracellular/nuclear receptors, interacting with the genome to regulate gene expression." },
+      { question: "Underproduction of hormones by the adrenal cortex leads to:", options: ["Graves' Disease", "Acromegaly", "Addison's Disease", "Gigantism"], correct: 2, explanation: "Underproduction of corticoids by adrenal cortex alters carbohydrate metabolism, causing acute weakness and fatigue known as Addison's disease." }
+    ];
+
+    const glandMap = {
+      hypothalamus: { name: "Hypothalamus", location: "Basal part of diencephalon (forebrain)", hormones: "GnRH, Somatostatin, TRH, CRH, GHRH, Oxytocin & Vasopressin (synthesised)", role: "Contains neurosecretory nuclei that regulate anterior pituitary hormone synthesis/secretion via portal circulation and posterior pituitary via direct neural regulation." },
+      pituitary: { name: "Pituitary Gland", location: "Bony cavity called sella tursica attached to hypothalamus", hormones: "GH, PRL, TSH, ACTH, LH, FSH, MSH (Anterior/Intermediate); Oxytocin, ADH (Posterior)", role: "Master endocrine gland regulating growth, thyroid, adrenal cortex, gonads, skin pigmentation, milk ejection, and water conservation." },
+      pineal: { name: "Pineal Gland", location: "Dorsal side of forebrain", hormones: "Melatonin", role: "Regulates 24-hour diurnal rhythm (sleep-wake cycle, body temperature), metabolism, pigmentation, menstrual cycle, and body defense capability." },
+      thyroid: { name: "Thyroid Gland", location: "Either side of trachea in neck, connected by isthmus", hormones: "T3 (Triiodothyronine), T4 (Thyroxine), TCT (Thyrocalcitonin)", role: "Regulates BMR, RBC formation, carbohydrate/lipid/protein metabolism, water/electrolyte balance, and blood calcium reduction (TCT)." },
+      parathyroid: { name: "Parathyroid Glands", location: "Back side of thyroid gland (4 glands, 1 pair per lobe)", hormones: "PTH (Parathyroid Hormone)", role: "Increases blood Ca²⁺ levels via bone resorption, renal tubule Ca²⁺ reabsorption, and intestinal Ca²⁺ absorption (hypercalcemic)." },
+      thymus: { name: "Thymus Gland", location: "Between lungs behind sternum on ventral side of aorta", hormones: "Thymosins", role: "Promotes T-lymphocyte differentiation (cell-mediated immunity) and antibody production (humoral immunity). Degenerates in old age." },
+      pancreas: { name: "Pancreas (Islets of Langerhans)", location: "Abdomen, composite exocrine-endocrine gland", hormones: "Insulin (from β-cells), Glucagon (from α-cells)", role: "Dual regulation of blood glucose homeostasis. Glucagon raises glucose (glycogenolysis); Insulin lowers glucose (cellular uptake & glycogenesis)." },
+      adrenal: { name: "Adrenal Glands", location: "Superior border of each kidney (pair)", hormones: "Medulla: Adrenaline, Noradrenaline | Cortex: Cortisol, Aldosterone, Androgens", role: "Medulla catecholamines handle fight-or-flight emergency stress; Cortex corticoids regulate glucose/protein metabolism (cortisol) & Na+/water balance (aldosterone)." },
+      ovary: { name: "Ovaries (Female)", location: "Pelvic cavity / abdomen in females (pair)", hormones: "Estrogen (from growing follicles), Progesterone (from corpus luteum)", role: "Estrogen stimulates female accessory organs & secondary characters; Progesterone maintains pregnancy, alveoli development, and milk secretion." },
+      testis: { name: "Testes (Male)", location: "Scrotal sac outside abdomen in males (pair)", hormones: "Androgens (Testosterone from Leydig / interstitial cells)", role: "Regulates male accessory sex organs, secondary characters, spermatogenesis, libido (sexual behaviour), and anabolic protein/carbohydrate synthesis." }
+    };
+
+    const ncertSkillsSections = [
+      { id: "19.1", title: "19.1 Endocrine Glands and Hormones", subtitle: "Definition, ductless nature, classical vs scientific definitions", content: "Endocrine glands lack ducts and are hence called ductless glands. Their secretions are called hormones. Classical definition: A chemical produced by endocrine glands and released into the blood and transported to a distantly located target organ. Current scientific definition: Hormones are non-nutrient chemicals which act as intercellular messengers and are produced in trace amounts. Invertebrates possess very simple endocrine systems with few hormones, whereas vertebrates have a complex endocrine system.", focus: "NEET Focus: Scientific definition specifies non-nutrient, intercellular messenger, produced in trace amounts." },
+      { id: "19.2", title: "19.2 Human Endocrine System", subtitle: "Overview of organized glands and diffused endocrine tissues", content: "The endocrine glands and hormone-producing diffused tissues/cells located in different parts of our body constitute the endocrine system. Organised endocrine bodies: Pituitary, pineal, thyroid, adrenal, pancreas, parathyroid, thymus and gonads (testes & ovaries). Diffused hormone-producing tissues: GI tract, liver, kidney, and heart.", focus: "NEET Focus: Distinguish between organized glands vs diffused endocrine tissues." },
+      { id: "19.2.1", title: "19.2.1 The Hypothalamus", subtitle: "Basal diencephalon, neurosecretory nuclei, releasing & inhibiting hormones", content: "Basal part of diencephalon (forebrain). Regulates a wide spectrum of body functions. Contains groups of neurosecretory cells called nuclei which produce hormones. Releasing hormones (e.g. GnRH) stimulate pituitary secretion; Inhibiting hormones (e.g. Somatostatin) inhibit pituitary secretion. Pass through axons and reach anterior pituitary via portal circulatory system. Posterior pituitary is under direct neural control.", focus: "NEET Focus: Portal circulation connects hypothalamus to anterior pituitary; posterior pituitary is neural extension." },
+      { id: "19.2.2", title: "19.2.2 The Pituitary Gland", subtitle: "Adenohypophysis, Neurohypophysis, trophic hormones & disorders", content: "Located in sella tursica cavity, attached to hypothalamus by stalk. Divided into Adenohypophysis (pars distalis & pars intermedia) and Neurohypophysis (pars nervosa). Pars distalis produces GH, PRL, TSH, ACTH, LH, FSH. Pars intermedia produces MSH. Neurohypophysis stores & releases Oxytocin and Vasopressin (ADH). Over-secretion of GH causes Gigantism (children) or Acromegaly (adults); low GH causes Pituitary Dwarfism. Oxytocin triggers uterine contraction & milk ejection. ADH reabsorbs water in renal tubules; deficiency causes Diabetes Insipidus.", focus: "NEET Focus: Acromegaly occurs in adults; Diabetes Insipidus is caused by ADH deficiency." },
+      { id: "19.2.3", title: "19.2.3 The Pineal Gland", subtitle: "Dorsal forebrain, Melatonin, diurnal 24-hr rhythm", content: "Located on dorsal side of forebrain. Secretes Melatonin. Melatonin plays a very important role in regulating 24-hour diurnal rhythm of body (sleep-wake cycle, body temperature). Also influences metabolism, pigmentation, menstrual cycle, and defense capability.", focus: "NEET Focus: Melatonin regulates 24-hour diurnal rhythm & body temperature." },
+      { id: "19.2.4", title: "19.2.4 Thyroid Gland", subtitle: "Trachea lobes, Isthmus, T3/T4, BMR, Goitre, Cretinism & Graves' Disease", content: "Composed of two lobes on either side of trachea interconnected by a thin flap of connective tissue called isthmus. Follicles and stromal tissues. Follicular cells synthesise T4 (thyroxine) and T3 (triiodothyronine). Iodine essential. Deficiency causes Hypothyroidism & Goitre. Hypothyroidism in pregnancy causes Cretinism (stunted growth, mental retardation, low IQ, deaf-mutism). Hyperthyroidism / Exophthalmic goitre (Graves' disease): enlarged thyroid, protruding eyeballs, high BMR, weight loss. Also secretes Thyrocalcitonin (TCT) which lowers blood Ca²⁺.", focus: "NEET Focus: TCT lowers blood Ca²⁺; Graves' disease is hyperthyroidism with protruding eyeballs." },
+      { id: "19.2.5", title: "19.2.5 Parathyroid Gland", subtitle: "4 glands on back of thyroid, PTH, hypercalcemic hormone", content: "Four parathyroid glands present on back side of thyroid gland (one pair each per lobe). Secretes Parathyroid Hormone (PTH), a peptide hormone. PTH increases blood Ca²⁺ levels by stimulating bone resorption (demineralisation), renal Ca²⁺ reabsorption, and gut Ca²⁺ absorption. PTH is a hypercalcemic hormone, operating antagonistically with TCT.", focus: "NEET Focus: PTH is hypercalcemic (increases blood Ca²⁺ via bone dissolution)." },
+      { id: "19.2.6", title: "19.2.6 Thymus", subtitle: "Ventral aorta, Thymosins, T-lymphocyte differentiation & immunity", content: "Lobular structure located between lungs behind sternum on ventral side of aorta. Secretes peptide hormones called Thymosins. Thymosins play major role in differentiation of T-lymphocytes (cell-mediated immunity) and antibody production (humoral immunity). Degenerates in old individuals, weakening immune response.", focus: "NEET Focus: Thymus degenerates in old age; Thymosins drive T-cell differentiation." },
+      { id: "19.2.7", title: "19.2.7 Adrenal Gland", subtitle: "Medulla (Catecholamines) & Cortex (Cortisol, Aldosterone, Addison's)", content: "Pair above kidneys. Adrenal Medulla (inner): Adrenaline (epinephrine) & Noradrenaline (norepinephrine) — catecholamines / emergency hormones / fight-or-flight. Increase heart rate, respiration, piloerection, sweating, glycogenolysis. Adrenal Cortex (outer): 3 layers — Zona reticularis (inner), Zona fasciculata (mid), Zona glomerulosa (outer). Secretes Corticoids. Glucocorticoids (Cortisol): gluconeogenesis, anti-inflammatory, immune suppression. Mineralocorticoids (Aldosterone): Na+ & water reabsorption, K+ excretion. Underproduction causes Addison's disease.", focus: "NEET Focus: Addison's disease = adrenal cortex failure; Catecholamines = emergency hormones." },
+      { id: "19.2.8", title: "19.2.8 Pancreas", subtitle: "Islets of Langerhans, α-cells (Glucagon), β-cells (Insulin), Diabetes Mellitus", content: "Composite exocrine-endocrine gland. Endocrine portion: 1 to 2 million Islets of Langerhans (1-2% of pancreatic tissue). α-cells secrete Glucagon (hyperglycemic, stimulates glycogenolysis & gluconeogenesis). β-cells secrete Insulin (hypoglycemic, enhances cellular glucose uptake & glycogenesis). Prolonged hyperglycemia causes Diabetes Mellitus (loss of glucose in urine, ketone bodies), treated with insulin therapy.", focus: "NEET Focus: α-cells = Glucagon (glycogenolysis); β-cells = Insulin (glycogenesis)." },
+      { id: "19.2.9", title: "19.2.9 Testis", subtitle: "Scrotal sac, Leydig cells, Androgens / Testosterone, Spermatogenesis", content: "Pair in scrotal sac. Primary sex organ & endocrine gland. Seminiferous tubules & interstitial tissue. Leydig cells (interstitial cells) produce Androgens (mainly testosterone). Regulate development, maturation, and functions of male accessory organs, secondary characters (muscular growth, low pitch voice, facial hair), spermatogenesis, male libido, and protein anabolic effects.", focus: "NEET Focus: Leydig cells in intertubular spaces produce testosterone." },
+      { id: "19.2.10", title: "19.2.10 Ovary", subtitle: "Pelvic cavity, Ovarian follicles (Estrogen), Corpus luteum (Progesterone)", content: "Pair in abdomen. Primary female sex organ. Produces ovum and steroid hormones: Estrogen & Progesterone. Estrogen synthesised by growing ovarian follicles; regulates female secondary sex characters & accessory organs. Ruptured follicle transforms into Corpus Luteum, secreting Progesterone. Progesterone supports pregnancy, alveoli formation in mammary glands, and milk secretion.", focus: "NEET Focus: Estrogen = Ovarian Follicles; Progesterone = Corpus Luteum & Pregnancy support." },
+      { id: "19.3", title: "19.3 Hormones of Heart, Kidney and GI Tract", subtitle: "ANF, Erythropoietin, Gastrin, Secretin, CCK & GIP", content: "Heart atrium: Atrial Natriuretic Factor (ANF) — causes vasodilation to decrease blood pressure. Kidney JGA: Erythropoietin — stimulates erythropoiesis (RBC formation). GI Tract: Gastrin (stimulates HCl & pepsinogen), Secretin (stimulates exocrine pancreas bicarbonate secretion), CCK / Cholecystokinin (stimulates pancreatic enzymes & bile secretion), GIP / Gastric Inhibitory Peptide (inhibits gastric secretion & motility). Growth factors: essential for normal tissue growth & regeneration.", focus: "NEET Focus: ANF lowers BP; Erythropoietin stimulates RBC production; CCK contracts gall bladder." },
+      { id: "19.4", title: "19.4 Mechanism of Hormone Action", subtitle: "Membrane vs Intracellular receptors, Second Messengers, Gene expression", content: "Hormones bind specific proteins called hormone receptors in target tissues. Membrane-bound receptors (cell membrane) vs Intracellular receptors (cytoplasm/nucleus). Formation of hormone-receptor complex causes biochemical changes. Water-soluble peptide hormones bind membrane receptors, generating second messengers (cAMP, IP3, Ca²⁺) to regulate cell metabolism. Lipid-soluble steroid hormones and iodothyronines bind intracellular/nuclear receptors, interacting with genome to regulate gene expression.", focus: "NEET Focus: Peptide hormones use 2nd messengers; Steroids & Thyroid hormones regulate gene expression." },
+      { id: "summary", title: "Chapter 19 Summary", subtitle: "Comprehensive summary of human chemical coordination", content: "The human endocrine system consists of hypothalamus, pituitary, pineal, thyroid, parathyroid, thymus, adrenal, pancreas, testes, and ovaries, along with heart, kidney, and GI tract tissues. Pituitary trophic hormones regulate peripheral glands; Melatonin controls diurnal rhythms; Thyroid T3/T4 & BMR; PTH raises Ca²⁺ while TCT lowers Ca²⁺; Thymosins drive T-cell immunity; Adrenal medulla catecholamines manage emergency stress; Adrenal cortex cortisol/aldosterone manage glucose & salt balance; Pancreas insulin & glucagon manage glucose homeostasis; Gonadal steroids control reproduction; Mechanism of action involves membrane-bound (2nd messenger) or intracellular (gene expression) receptors.", focus: "NEET Focus: Full chapter synthesis for final quick review." },
+      { id: "exercises", title: "NCERT Exercises & Solutions", subtitle: "Original textbook exercise questions & answers", content: "1. Define Exocrine gland, Endocrine gland, Hormone.\\n2. Indicate locations of endocrine glands in body.\\n3. List hormones of Hypothalamus, Pituitary, Thyroid, Parathyroid, Adrenal, Pancreas, Testis, Ovary, Thymus, Atrium, Kidney, GI tract.\\n4. Fill in target glands for hypothalamic, TSH, ACTH, Gonadotrophins, MSH.\\n5. Short notes on PTH, Thyroid hormones, Thymosins, Androgens, Estrogens, Insulin/Glucagon.\\n6. Give examples of Hyperglycemic/Hypoglycemic, Hypercalcemic, Gonadotrophic, Progestational, BP lowering hormones.\\n7. Hormonal deficiency for Diabetes mellitus (Insulin), Goitre (Iodine/T3/T4), Cretinism (Thyroid in pregnancy).\\n8. Mechanism of action of FSH (binds membrane receptor → generates cAMP → gonadal growth).", focus: "NEET Focus: Direct textbook questions frequently asked in board & NEET exams." }
+    ];
+
+    // -------------------------------------------------------------
+    // STUDENT INTERACTIVE FILL IN THE BLANKS & MATCHING DATA
+    // -------------------------------------------------------------
+    const blanksQuestionsData = [
+      { id: 1, text: "Hypothalamic hormones regulate the synthesis and secretion of hormones from the ________ gland.", answers: ["pituitary", "pituitary gland", "anterior pituitary"], displayAnswer: "Pituitary Gland" },
+      { id: 2, text: "Thyrotrophin (TSH) stimulates the synthesis and secretion of hormones from the ________ gland.", answers: ["thyroid", "thyroid gland"], displayAnswer: "Thyroid Gland" },
+      { id: 3, text: "Corticotrophin (ACTH) stimulates the synthesis and secretion of steroid hormones from the ________.", answers: ["adrenal cortex", "adrenal"], displayAnswer: "Adrenal Cortex" },
+      { id: 4, text: "Gonadotrophins (LH and FSH) stimulate gonadal activity in males and females in the ________.", answers: ["gonads", "testes and ovaries", "testis and ovary", "testes", "ovaries"], displayAnswer: "Gonads (Testes & Ovaries)" },
+      { id: 5, text: "Melanotrophin (MSH) acts on ________ to regulate skin pigmentation.", answers: ["melanocytes", "melanin cells", "melanocyte"], displayAnswer: "Melanocytes" },
+      { id: 6, text: "Parathyroid hormone (PTH) increases blood Ca²⁺ levels, making it a ________ hormone.", answers: ["hypercalcemic", "hypercalcemic hormone"], displayAnswer: "Hypercalcemic" },
+      { id: 7, text: "The primary glucocorticoid involved in carbohydrate metabolism in humans is ________.", answers: ["cortisol"], displayAnswer: "Cortisol" },
+      { id: 8, text: "The primary mineralocorticoid regulating electrolyte and water balance in humans is ________.", answers: ["aldosterone"], displayAnswer: "Aldosterone" },
+      { id: 9, text: "Adrenaline and Noradrenaline are emergency hormones secreted by adrenal medulla, also called ________.", answers: ["catecholamines", "catecholamine", "emergency hormones"], displayAnswer: "Catecholamines" },
+      { id: 10, text: "Pancreatic α-cells (alpha cells) secrete the hyperglycemic hormone ________.", answers: ["glucagon"], displayAnswer: "Glucagon" },
+      { id: 11, text: "Pancreatic β-cells (beta cells) secrete the hypoglycemic hormone ________.", answers: ["insulin"], displayAnswer: "Insulin" },
+      { id: 12, text: "Anti-Diuretic Hormone (ADH) stored in posterior pituitary is also known as ________.", answers: ["vasopressin"], displayAnswer: "Vasopressin" },
+      { id: 13, text: "The peptide hormone produced by kidney JGA cells that stimulates erythropoiesis is ________.", answers: ["erythropoietin"], displayAnswer: "Erythropoietin" },
+      { id: 14, text: "The peptide hormone secreted by heart atria to lower blood pressure via vasodilation is ________.", answers: ["anf", "atrial natriuretic factor", "atrial natriuretic peptide"], displayAnswer: "ANF (Atrial Natriuretic Factor)" },
+      { id: 15, text: "Membrane-bound receptor binding by peptide hormones generates ________ messengers (e.g. cAMP, IP3, Ca²⁺) inside target cells.", answers: ["second", "second messengers", "2nd", "second messenger"], displayAnswer: "Second Messengers" }
+    ];
+
+    const matchItemsData = [
+      { id: 'm1', item: '(a) T4 (Thyroxine)', correctVal: 'ii', correctText: '(ii) Thyroid Gland' },
+      { id: 'm2', item: '(b) PTH (Parathyroid Hormone)', correctVal: 'iv', correctText: '(iv) Parathyroid Gland' },
+      { id: 'm3', item: '(c) GnRH (Gonadotrophin Releasing Hormone)', correctVal: 'i', correctText: '(i) Hypothalamus' },
+      { id: 'm4', item: '(d) LH (Luteinizing Hormone)', correctVal: 'iii', correctText: '(iii) Pituitary Gland' },
+      { id: 'm5', item: '(e) Melatonin', correctVal: 'v', correctText: '(v) Pineal Gland' },
+      { id: 'm6', item: '(f) Thymosins', correctVal: 'vi', correctText: '(vi) Thymus' },
+      { id: 'm7', item: '(g) Insulin', correctVal: 'vii', correctText: '(vii) Pancreas' },
+      { id: 'm8', item: '(h) Testosterone', correctVal: 'viii', correctText: '(viii) Testis' },
+      { id: 'm9', item: '(i) Progesterone', correctVal: 'ix', correctText: '(ix) Ovary' },
+      { id: 'm10', item: '(j) ANF (Atrial Natriuretic Factor)', correctVal: 'x', correctText: '(x) Heart' },
+      { id: 'm11', item: '(k) Erythropoietin', correctVal: 'xi', correctText: '(xi) Kidney' },
+      { id: 'm12', item: '(l) Gastrin', correctVal: 'xii', correctText: '(xii) Gastrointestinal tract' }
+    ];
+
+    const matchOptionsList = [
+      { val: 'i', text: '(i) Hypothalamus' },
+      { val: 'ii', text: '(ii) Thyroid Gland' },
+      { val: 'iii', text: '(iii) Pituitary Gland' },
+      { val: 'iv', text: '(iv) Parathyroid Gland' },
+      { val: 'v', text: '(v) Pineal Gland' },
+      { val: 'vi', text: '(vi) Thymus' },
+      { val: 'vii', text: '(vii) Pancreas' },
+      { val: 'viii', text: '(viii) Testis' },
+      { val: 'ix', text: '(ix) Ovary' },
+      { val: 'x', text: '(x) Heart' },
+      { val: 'xi', text: '(xi) Kidney' },
+      { val: 'xii', text: '(xii) Gastrointestinal tract' }
+    ];
+
+    // -------------------------------------------------------------
+    // NAVIGATION & VIEW ENGINE
+    // -------------------------------------------------------------
+    function navigateTo(viewId) {
+      document.querySelectorAll('.app-view').forEach(v => v.classList.remove('active'));
+      const target = document.getElementById('view-' + viewId);
+      if (target) {
+        target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.location.hash = viewId;
+        if (viewId === 'skills') renderCoreSkills();
+      }
+    }
+
+    function toggleIntroCard(cardEl) {
+      // Independent cards: each question opens/closes on its own.
+      // This allows multiple questions to remain open at the same time,
+      // matching the reference layout.
+      const isExpanded = cardEl.classList.contains('expanded');
+      const arrow = cardEl.querySelector('.cell-intro-card-header > div:last-child');
+
+      if (isExpanded) {
+        cardEl.classList.remove('expanded');
+        if (arrow) arrow.style.transform = 'none';
+      } else {
+        cardEl.classList.add('expanded');
+        if (arrow) arrow.style.transform = 'rotate(180deg)';
+      }
+    }
+
+    // -------------------------------------------------------------
+    // CONNECTOMICS INSPECTOR ENGINE
+    // -------------------------------------------------------------
+    function inspectGland(key) {
+      document.querySelectorAll('.gland-dot').forEach(d => d.classList.remove('active'));
+      const dot = document.getElementById('gland-' + key);
+      if (dot) dot.classList.add('active');
+
+      const g = glandMap[key] || glandMap.hypothalamus;
+      const container = document.getElementById('gland-inspector-card');
+      container.innerHTML = `
+        <div style="display:flex; align-items:center; gap:16px; margin-bottom:20px">
+          <div style="width:52px; height:52px; border-radius:14px; background:rgba(79,70,229,0.1); color:var(--cell-indigo); display:flex; align-items:center; justify-content:center; font-size:26px; font-weight:900">🧬</div>
+          <div>
+            <h2 style="font-family:'Outfit', sans-serif; font-size:26px; font-weight:900; color:var(--cell-text); margin:0">${g.name}</h2>
+            <div style="font-size:13px; font-weight:700; color:var(--cell-indigo); text-transform:uppercase; letter-spacing:1px">${g.location}</div>
+          </div>
+        </div>
+
+        <div style="margin-bottom:20px; background:#f8fafc; padding:18px; border-radius:16px; border:1px solid #e2e8f0">
+          <h4 style="text-transform:uppercase; font-size:11px; letter-spacing:1.5px; color:var(--cell-indigo); margin-bottom:8px; font-weight:800">Primary Hormones</h4>
+          <div style="font-size:15px; font-weight:700; color:var(--cell-text)">${g.hormones}</div>
+        </div>
+
+        <div style="margin-bottom:24px">
+          <h4 style="text-transform:uppercase; font-size:11px; letter-spacing:1.5px; color:var(--cell-muted); margin-bottom:8px; font-weight:800">Physiological Role &amp; Connections</h4>
+          <p style="font-size:15px; color:var(--cell-muted); line-height:1.65; margin:0">${g.role}</p>
+        </div>
+
+        <button onclick="navigateTo('skills')" style="padding:10px 22px; background:var(--cell-indigo); color:#fff; border:none; border-radius:100px; font-weight:700; font-size:14px; cursor:pointer">
+          Read full section in Skills →
+        </button>
+      `;
+    }
+
+    // -------------------------------------------------------------
+    // TERMINOLOGY ENGINE
+    // -------------------------------------------------------------
+    let currentLexiconTab = 'terms';
+    let currentTermIndex = 0;
+    let currentRuleIndex = 0;
+
+    let quizIndex = 0;
+    let quizScore = 0;
+    let quizSelectedOption = null;
+    let quizAnswered = false;
+
+    function switchLexiconTab(tabName) {
+      currentLexiconTab = tabName;
+      document.getElementById('tab-terms').className = `cell-nav-link ${tabName === 'terms' ? 'active' : ''}`;
+      document.getElementById('tab-rules').className = `cell-nav-link ${tabName === 'rules' ? 'active' : ''}`;
+      document.getElementById('tab-quiz').className = `cell-nav-link ${tabName === 'quiz' ? 'active' : ''}`;
+
+      const mainEl = document.getElementById('lexicon-content-main');
+      const quizEl = document.getElementById('lexicon-quiz-section');
+      const subhead = document.getElementById('lexicon-subhead');
+
+      if (tabName === 'quiz') {
+        mainEl.style.display = 'none';
+        quizEl.style.display = 'block';
+        subhead.textContent = 'Test your hormone vocabulary & NEET rules!';
+        resetQuiz();
+      } else {
+        mainEl.style.display = 'grid';
+        quizEl.style.display = 'none';
+        subhead.textContent = `Explore core concepts with ${tabName === 'terms' ? '12 key terms' : '5 golden rules'}.`;
+        renderLexiconSidebar();
+        renderLexiconDetails();
+      }
+    }
+
+    function renderLexiconSidebar() {
+      const sb = document.getElementById('lexicon-sidebar');
+      sb.innerHTML = '';
+
+      if (currentLexiconTab === 'terms') {
+        termsData.forEach((t, i) => {
+          const isActive = currentTermIndex === i;
+          const btn = document.createElement('button');
+          btn.className = `cell-term-btn-mini ${isActive ? 'active' : ''}`;
+          btn.onclick = () => { currentTermIndex = i; renderLexiconSidebar(); renderLexiconDetails(); };
+          btn.innerHTML = `
+            <div style="width:34px; height:34px; border-radius:10px; background:${isActive ? '#fff' : t.color + '15'}; display:flex; align-items:center; justify-content:center; font-size:18px">${t.icon}</div>
+            <span style="font-weight:800; font-size:15px">${t.name}</span>
+          `;
+          sb.appendChild(btn);
+        });
+      } else {
+        rulesData.forEach((r, i) => {
+          const isActive = currentRuleIndex === i;
+          const btn = document.createElement('button');
+          btn.className = `cell-term-btn-mini ${isActive ? 'active' : ''}`;
+          btn.onclick = () => { currentRuleIndex = i; renderLexiconSidebar(); renderLexiconDetails(); };
+          btn.innerHTML = `
+            <div style="width:34px; height:34px; border-radius:10px; background:${isActive ? '#fff' : r.color + '15'}; display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:900; color:${isActive ? r.color : 'inherit'}">${r.num}</div>
+            <div style="display:flex; flex-direction:column">
+              <span style="font-weight:800; font-size:14px">Rule ${r.num}</span>
+              <span style="font-size:10px; font-weight:700; text-transform:uppercase; opacity:.8">${r.title}</span>
+            </div>
+          `;
+          sb.appendChild(btn);
+        });
+      }
+    }
+
+    function renderLexiconDetails() {
+      const dt = document.getElementById('lexicon-details');
+      dt.innerHTML = '';
+
+      if (currentLexiconTab === 'terms') {
+        const item = termsData[currentTermIndex];
+        dt.innerHTML = `
+          <div style="display:flex; align-items:center; gap:16px; margin-bottom:20px">
+            <div style="width:56px; height:56px; border-radius:16px; background:${item.color}15; display:flex; align-items:center; justify-content:center; font-size:28px">${item.icon}</div>
+            <h2 style="font-family:'Outfit', sans-serif; font-size:30px; font-weight:900; color:${item.color}; margin:0">${item.name}</h2>
+          </div>
+          <p style="font-size:17px; color:var(--cell-text); line-height:1.65; margin:0 0 24px">${item.def}</p>
+          
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:24px">
+            <div>
+              <h4 style="text-transform:uppercase; font-size:11px; letter-spacing:1.5px; color:${item.color}; margin-bottom:12px; font-weight:800">Examples &amp; NCERT Context</h4>
+              <div style="background:${item.color}05; padding:20px; border-radius:16px; border:1px solid ${item.color}15">
+                <div style="display:flex; flex-direction:column; gap:10px">
+                  ${item.examples.map(ex => `<div style="background:#fff; border:1px solid ${item.color}20; padding:8px 12px; border-radius:8px; font-size:14px; font-weight:600">${ex}</div>`).join('')}
+                </div>
+                <div style="margin-top:14px; font-size:13px; color:var(--cell-muted); font-style:italic; border-top:1px solid #e2e8f0; padding-top:12px">${item.inUse}</div>
+              </div>
+            </div>
+            <div>
+              <h4 style="text-transform:uppercase; font-size:11px; letter-spacing:1.5px; color:var(--cell-indigo); margin-bottom:12px; font-weight:800">Pro Memory Tip</h4>
+              <div style="background:rgba(79, 70, 229, 0.05); padding:20px; border-radius:16px; border:1px solid rgba(79, 70, 229, 0.1)">
+                <p style="margin:0; font-size:15px; color:var(--cell-muted); line-height:1.6">
+                  <span style="font-weight:800; color:var(--cell-indigo)">💡 Memory Hook: </span>${item.memory}
+                </p>
+              </div>
+            </div>
+          </div>
+        `;
+      } else {
+        const item = rulesData[currentRuleIndex];
+        dt.innerHTML = `
+          <div style="display:flex; align-items:center; gap:16px; margin-bottom:20px">
+            <div style="width:56px; height:56px; border-radius:16px; background:${item.color}15; display:flex; align-items:center; justify-content:center; font-size:24px; color:${item.color}; font-weight:900">${item.emoji}</div>
+            <h2 style="font-family:'Outfit', sans-serif; font-size:26px; font-weight:900; color:${item.color}; margin:0">Rule ${item.num}: ${item.title}</h2>
+          </div>
+
+          <div style="background:${item.color}08; padding:20px 24px; border-radius:16px; border-left:6px solid ${item.color}; margin-bottom:24px">
+            <p style="font-size:18px; font-weight:700; color:${item.color}; margin:0">${item.rule}</p>
+          </div>
+
+          <p style="font-size:17px; color:var(--cell-text); line-height:1.65; margin:0 0 24px">${item.detail}</p>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:24px">
+            <div>
+              <h4 style="text-transform:uppercase; font-size:11px; letter-spacing:1.5px; color:${item.color}; margin-bottom:12px; font-weight:800">NCERT Applications</h4>
+              <div style="background:#f8fafc; padding:20px; border-radius:16px; border:1px solid rgba(0,0,0,0.05)">
+                <div style="display:flex; flex-direction:column; gap:10px">
+                  ${item.examples.map(ex => `<div style="background:#fff; padding:8px 12px; border-radius:8px; font-size:14px; font-weight:600; border:1px solid #e2e8f0">${ex}</div>`).join('')}
+                </div>
+              </div>
+            </div>
+            <div>
+              <h4 style="text-transform:uppercase; font-size:11px; letter-spacing:1.5px; color:var(--cell-teal); margin-bottom:12px; font-weight:800">NEET Question Trap</h4>
+              <div style="background:rgba(13, 148, 136, 0.05); padding:20px; border-radius:16px; border:1px solid rgba(13, 148, 136, 0.1)">
+                <p style="margin:0; font-size:15px; color:var(--cell-muted); line-height:1.6">
+                  <span style="font-weight:800; color:var(--cell-teal)">⚠️ Warning: </span>${item.tip}
+                </p>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    // -------------------------------------------------------------
+    // QUIZ ENGINE
+    // -------------------------------------------------------------
+    function resetQuiz() {
+      quizIndex = 0;
+      quizScore = 0;
+      quizSelectedOption = null;
+      quizAnswered = false;
+      renderQuizQuestion();
+    }
+
+    function renderQuizQuestion() {
+      const qBox = document.getElementById('lexicon-quiz-section');
+      if (quizIndex >= quizData.length) {
+        qBox.innerHTML = `
+          <div style="text-align:center; padding:20px">
+            <div style="font-size:64px; margin-bottom:16px">🏆</div>
+            <h2 style="font-family:'Outfit', sans-serif; font-size:28px; font-weight:900; color:#1e1b4b">Quiz Completed!</h2>
+            <p style="font-size:18px; color:var(--cell-muted); margin-bottom:24px">Your final score: <strong style="color:var(--cell-indigo)">${quizScore} / ${quizData.length}</strong></p>
+            <button onclick="resetQuiz()" style="padding:12px 28px; background:var(--cell-indigo); color:#fff; border:none; border-radius:100px; font-weight:800; cursor:pointer">Try Again 🔄</button>
+          </div>
+        `;
+        return;
+      }
+
+      const q = quizData[quizIndex];
+      qBox.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px">
+          <div>
+            <div style="font-size:11px; font-weight:800; letter-spacing:1.5px; text-transform:uppercase; color:var(--cell-indigo)">QUESTION ${quizIndex + 1} OF ${quizData.length}</div>
+            <h3 style="font-family:'Outfit', sans-serif; font-size:22px; font-weight:900; margin:4px 0 0; color:#1e1b4b">NEET Mastery Quiz</h3>
+          </div>
+          <div style="width:48px; height:48px; border-radius:50%; background:rgba(79,70,229,0.1); color:var(--cell-indigo); display:flex; align-items:center; justify-content:center; font-weight:900; font-size:18px">${quizScore}</div>
+        </div>
+
+        <p style="font-size:18px; font-weight:700; color:#0f172a; margin-bottom:24px; line-height:1.5">${q.question}</p>
+
+        <div class="cell-quiz-options">
+          ${q.options.map((opt, i) => {
+            let cls = "cell-quiz-option";
+            if (quizAnswered) {
+              if (i === q.correct) cls += " correct";
+              else if (i === quizSelectedOption) cls += " wrong";
+            }
+            return `<button class="${cls}" onclick="selectQuizOption(${i})" ${quizAnswered ? 'disabled' : ''}>${opt}</button>`;
+          }).join('')}
+        </div>
+
+        ${quizAnswered ? `
+          <div style="background:rgba(79,70,229,0.06); border-radius:14px; padding:16px 20px; margin-bottom:24px; border-left:4px solid var(--cell-indigo)">
+            <p style="margin:0; font-size:14px; color:#334155; line-height:1.6"><strong style="color:var(--cell-indigo)">Explanation: </strong>${q.explanation}</p>
+          </div>
+          <div style="text-align:right">
+            <button onclick="nextQuizQuestion()" style="padding:12px 28px; background:var(--cell-indigo); color:#fff; border:none; border-radius:100px; font-weight:800; cursor:pointer">Next Question →</button>
+          </div>
+        ` : ''}
+      `;
+    }
+
+    function selectQuizOption(index) {
+      if (quizAnswered) return;
+      quizSelectedOption = index;
+      quizAnswered = true;
+      if (index === quizData[quizIndex].correct) {
+        quizScore++;
+      }
+      renderQuizQuestion();
+    }
+
+    function nextQuizQuestion() {
+      quizIndex++;
+      quizSelectedOption = null;
+      quizAnswered = false;
+      renderQuizQuestion();
+    }
+
+    // -------------------------------------------------------------
+    // IMAGE-REFERENCE CORE SKILLS / LEARN / PRACTICE / ASSESS ENGINE
+    // -------------------------------------------------------------
+    const skillColors = ['#2563eb','#10b981','#f59e0b','#0d9488','#7c3aed','#ec4899','#8b5cf6','#14b8a6'];
+    const skillIcons = ['🏛️','🧬','🧪','🔬','🧫','⚙️','🧠','🌿'];
+    let selectedSkillIndex = 0;
+    let practiceIndex = 0;
+    let practiceSelected = null;
+    let assessIndex = 0;
+    let assessAnswers = {};
+    let assessMarked = {};
+    let assessSeconds = 4;
+    let assessTimerHandle = null;
+
+    const practiceQuestions = quizData.concat([
+      { question:'Which gland is attached to the hypothalamus by a stalk?', options:['Thyroid','Pituitary','Pineal','Thymus'], correct:1, explanation:'The pituitary gland is attached to the hypothalamus by a stalk and is functionally regulated by it.' },
+      { question:'Which hormone lowers blood calcium level?', options:['PTH','Thyrocalcitonin (TCT)','Glucagon','ADH'], correct:1, explanation:'Thyrocalcitonin (TCT) lowers blood Ca²⁺ levels.' },
+      { question:'Which cells of the pancreas secrete insulin?', options:['Alpha cells','Beta cells','Delta cells','Acinar cells'], correct:1, explanation:'Pancreatic β-cells secrete insulin, a hypoglycemic hormone.' },
+      { question:'Which hormone stimulates erythropoiesis?', options:['Gastrin','Erythropoietin','ANF','Melatonin'], correct:1, explanation:'Kidney JGA cells produce erythropoietin, which stimulates RBC formation.' },
+      { question:'Peptide hormones generally act through:', options:['Intracellular receptors only','Second messengers','DNA directly','Ribosomes'], correct:1, explanation:'Water-soluble peptide hormones bind membrane receptors and commonly generate second messengers.' }
+    ]).slice(0,15);
+
+    function skillCardHTML(sec, idx) {
+      const c = skillColors[idx % skillColors.length];
+      const icon = skillIcons[idx % skillIcons.length];
+      return `<div class="core-skill-card" data-skill="${idx}">
+        <div class="core-skill-icon" style="background:${c}12;color:${c}">${icon}</div>
+        <div class="core-skill-main"><h3>${sec.title}</h3><p>${sec.subtitle}</p></div>
+        <div class="core-skill-actions">
+          <button type="button" onclick="event.stopPropagation(); openLearn(${idx})">▤ Learn</button>
+          <button type="button" onclick="event.stopPropagation(); openPractice(${idx})">🖉 Practice</button>
+          <button type="button" class="assess" style="background:${c}" onclick="event.stopPropagation(); openAssess(${idx})">🏆 Assess</button>
+        </div>
+      </div>`;
+    }
+
+    function renderCoreSkills() {
+      const targets = [document.getElementById('core-skills-list'), document.getElementById('skills-list-container')].filter(Boolean);
+      targets.forEach(container => { container.innerHTML = ncertSkillsSections.map(skillCardHTML).join(''); });
+    }
+
+    function openLearn(index) {
+      selectedSkillIndex = index;
+      navigateTo('learn');
+      renderLearn();
+    }
+
+    function renderLearn() {
+      const sec = ncertSkillsSections[selectedSkillIndex];
+      const entries = ncertSkillsSections.slice(selectedSkillIndex, Math.min(selectedSkillIndex + 3, ncertSkillsSections.length));
+      document.getElementById('learn-panel').innerHTML = `
+        <div class="topic-kicker">TOPIC ${selectedSkillIndex + 1}</div>
+        <h1 class="topic-title">${sec.title.replace(/^\d+(?:\.\d+)*\s*/, '')}</h1>
+        ${entries.map((item, i) => `<section class="learn-entry">
+          <h3>${item.title}</h3>
+          <p>${item.content.replace(/\\n/g,'<br>')}</p>
+          <div class="focus-note"><strong>Focus:</strong> ${item.focus}</div>
+        </section>`).join('')}
+        <div class="learn-nav">
+          <button onclick="navigateTo('skills')">← Back to Core Skills</button>
+          ${selectedSkillIndex < ncertSkillsSections.length-1 ? `<button onclick="openLearn(${selectedSkillIndex+1})">Next Topic →</button>` : ''}
+        </div>`;
+    }
+
+    function openPractice(index) {
+      selectedSkillIndex = index;
+      practiceIndex = 0;
+      practiceSelected = null;
+      navigateTo('practice');
+      renderPractice();
+    }
+
+    function renderPractice() {
+ const q=practiceQuestions[practiceIndex]; const answered=practiceSelected!==null; const ok=answered&&practiceSelected===q.correct;
+ document.getElementById('practice-card').innerHTML=`<div class="practice-top"><span class="practice-exit" onclick="navigateTo('skills')">← Exit Practice</span><span>Practice ${practiceIndex+1}/15</span></div><div class="practice-question">${q.question}</div><div class="practice-options">${q.options.map((opt,i)=>`<button class="practice-option ${answered?(i===q.correct?'correct':(practiceSelected===i?'wrong':'')):(practiceSelected===i?'selected':'')}" onclick="${answered?'':`selectPractice(${i})`}"><span class="letter">${String.fromCharCode(65+i)}</span>${opt}</button>`).join('')}</div>${answered?`<div class="practice-feedback"><b>${ok?'✓ Correct':'✗ Incorrect'}</b><br/>Correct Answer: ${String.fromCharCode(65+q.correct)}. ${q.options[q.correct]}<br/>${q.explanation||''}</div>`:''}<div class="practice-footer"><button class="practice-next ${answered?'ready':''}" onclick="nextPractice()" ${answered?'':'disabled'}>${practiceIndex===14?'Finish Practice':'Next Question →'}</button></div>`;}
+function selectPractice(i) { practiceSelected=i; renderPractice(); }
+    function nextPractice() { if (practiceSelected===null) return; if (practiceIndex<14) { practiceIndex++; practiceSelected=null; renderPractice(); } else { alert('Practice completed!'); navigateTo('skills'); } }
+
+    function openAssess(index) {
+      selectedSkillIndex = index;
+      assessIndex = 0;
+      assessAnswers = {};
+      assessMarked = {};
+      assessSeconds = 0;
+      navigateTo('assess');
+      renderAssessment();
+      renderPalette();
+      updateAssessTimer();
+      if (assessTimerHandle) clearInterval(assessTimerHandle);
+      assessTimerHandle = setInterval(() => {
+        assessSeconds++;
+        updateAssessTimer();
+      }, 1000);
+    }
+
+    function updateAssessTimer() {
+      const el = document.getElementById('assess-timer');
+      if (!el) return;
+      const m = Math.floor(assessSeconds / 60);
+      const sec = String(assessSeconds % 60).padStart(2, '0');
+      el.textContent = `${m}:${sec}`;
+    }
+
+    function renderPalette() {
+      const palette = document.getElementById('assess-palette');
+      if (!palette) return;
+      palette.innerHTML = practiceQuestions.map((_,i) => {
+        const answered = assessAnswers[i] !== undefined;
+        const marked = !!assessMarked[i];
+        return `<button class="${answered ? 'answered' : ''} ${i===assessIndex ? 'current' : ''} ${marked ? 'assess-marked' : ''}" onclick="jumpAssessment(${i})">${i+1}</button>`;
+      }).join('');
+    }
+
+    function renderAssessment() {
+      const q = practiceQuestions[assessIndex];
+      const main = document.getElementById('assess-main');
+      if (!main || !q) return;
+      main.innerHTML = `
+        <span class="assess-badge">QUESTION ${assessIndex+1}</span>
+        <div class="assess-question">${q.question}</div>
+        ${q.options.map((o,i)=>`<button class="assess-option ${assessAnswers[assessIndex]===i?'selected':''}" onclick="selectAssessment(${i})">${String.fromCharCode(65+i)}&nbsp;&nbsp; ${o}</button>`).join('')}
+        <div class="assess-actions">
+          <button onclick="markAssessment()">${assessMarked[assessIndex] ? '✓ Marked for Review' : 'Mark for Review'}</button>
+          ${assessIndex>0 ? '<button onclick="jumpAssessment(assessIndex-1)">← Previous</button>' : ''}
+          <button class="next" onclick="jumpAssessment(assessIndex<14?assessIndex+1:14)">${assessIndex===14?'Finish':'Next →'}</button>
+        </div>`;
+    }
+
+    function selectAssessment(i) {
+      assessAnswers[assessIndex] = i;
+      renderAssessment();
+      renderPalette();
+    }
+
+    function markAssessment() {
+      assessMarked[assessIndex] = !assessMarked[assessIndex];
+      renderAssessment();
+      renderPalette();
+    }
+
+    function jumpAssessment(i) {
+      if (i < 0 || i >= practiceQuestions.length) return;
+      assessIndex = i;
+      renderAssessment();
+      renderPalette();
+    }
+
+    function submitAssessment() {
+      if (assessTimerHandle) {
+        clearInterval(assessTimerHandle);
+        assessTimerHandle = null;
+      }
+      let score = 0;
+      const results = practiceQuestions.map((q,i) => {
+        const u = assessAnswers[i];
+        const ok = u === q.correct;
+        if (ok) score++;
+        return `<div class="assessment-result ${ok?'ok':'bad'}"><b>Q${i+1}</b> ${q.question}<br/>Your Answer: ${u==null?'Not Answered':q.options[u]}${ok ? ' ✓' : `<br/><b>Correct:</b> ${q.options[q.correct]}<br/>${q.explanation||''}`}</div>`;
+      }).join('');
+      const m = String(Math.floor(assessSeconds/60)).padStart(2,'0');
+      const sec = String(assessSeconds%60).padStart(2,'0');
+      const view = document.getElementById('view-assess');
+      if (!view) return;
+      view.querySelector('.assess-page').innerHTML = `
+        <div class="assessment-results">
+          <div style="text-align:center;margin-bottom:24px">
+            <div style="font-size:48px">🏆</div>
+            <h2 style="font-family:'Outfit',sans-serif;font-size:28px;margin:5px 0;color:#111827">Assessment Results</h2>
+            <h3 style="font-size:20px;color:#4f46e5;margin:0 0 6px">Score: ${score}/${practiceQuestions.length}</h3>
+            <p style="color:#64748b;margin:0">Time: ${m}:${sec}</p>
+          </div>
+          ${results}
+          <div style="display:flex;justify-content:center;gap:10px;margin-top:22px;flex-wrap:wrap">
+            <button onclick="openAssess(${selectedSkillIndex})" style="padding:11px 20px;border:0;border-radius:22px;background:#4f46e5;color:#fff;font-weight:800;cursor:pointer">Retake Assessment</button>
+            <button onclick="navigateTo('skills'); renderCoreSkills()" style="padding:11px 20px;border:1px solid #dbe3ee;border-radius:22px;background:#fff;color:#475569;font-weight:800;cursor:pointer">Back to Skills</button>
+          </div>
+        </div>`;
+    }
+
+    // -------------------------------------------------------------
+    // SKILLS SECTIONS ENGINE
+    // -------------------------------------------------------------
+    function renderSkillsSectionsLegacy() {
+      const container = document.getElementById('skills-list-container');
+      container.innerHTML = '';
+
+      ncertSkillsSections.forEach((sec, idx) => {
+        const card = document.createElement('div');
+        card.className = 'cell-skill-card';
+        card.innerHTML = `
+          <div class="cell-skill-header">
+            <div class="cell-skill-icon" style="background:rgba(124,58,237,0.1); color:#7c3aed">📚</div>
+            <div style="flex:1">
+              <h3 style="font-family:'Outfit', sans-serif; font-size:20px; font-weight:800; color:#1e1b4b; margin:0 0 4px">${sec.title}</h3>
+              <p style="font-size:13px; color:#64748b; margin:0">${sec.subtitle}</p>
+            </div>
+            <div style="color:#94a3b8; font-size:20px; transition:transform 0.3s">▼</div>
+          </div>
+          <div class="cell-intro-card-body" style="display:none; padding:16px 0 0; border-top:1px solid #f1f5f9; margin-top:16px">
+            <div style="background:rgba(124,58,237,0.06); padding:12px 16px; border-radius:12px; margin-bottom:16px; border-left:4px solid #7c3aed">
+              <strong style="color:#7c3aed; font-size:13px; text-transform:uppercase; letter-spacing:1px">${sec.focus}</strong>
+            </div>
+            <p style="font-size:15px; color:#334155; line-height:1.7; margin:0">${sec.content.replace(/\\n/g, '<br>')}</p>
+          </div>
+        `;
+
+        card.onclick = (e) => {
+          const body = card.querySelector('.cell-intro-card-body');
+          const arrow = card.querySelector('.cell-skill-header > div:last-child');
+          const isOpen = body.style.display === 'block';
+          
+          document.querySelectorAll('.cell-skill-card .cell-intro-card-body').forEach(b => b.style.display = 'none');
+          document.querySelectorAll('.cell-skill-card .cell-skill-header > div:last-child').forEach(a => a.style.transform = 'none');
+
+          if (!isOpen) {
+            body.style.display = 'block';
+            arrow.style.transform = 'rotate(180deg)';
+          }
+        };
+
+        container.appendChild(card);
+      });
+    }
+
+    // -------------------------------------------------------------
+    // EXAM EDGE MODE ENGINE
+    // -------------------------------------------------------------
+    let currentExamMode = 'mcqs';
+
+    function switchExamMode(mode) {
+      currentExamMode = mode;
+      document.getElementById('exam-mode-mcqs-btn').style.border = mode === 'mcqs' ? '2px solid #ef4444' : '2px solid #e2e8f0';
+      document.getElementById('exam-mode-mcqs-btn').style.background = mode === 'mcqs' ? '#ef444415' : '#fff';
+      document.getElementById('exam-mode-mcqs-btn').style.color = mode === 'mcqs' ? '#ef4444' : '#64748b';
+
+      document.getElementById('exam-mode-blanks-btn').style.border = mode === 'blanks' ? '2px solid #ef4444' : '2px solid #e2e8f0';
+      document.getElementById('exam-mode-blanks-btn').style.background = mode === 'blanks' ? '#ef444415' : '#fff';
+      document.getElementById('exam-mode-blanks-btn').style.color = mode === 'blanks' ? '#ef4444' : '#64748b';
+
+      document.getElementById('exam-mode-match-btn').style.border = mode === 'match' ? '2px solid #ef4444' : '2px solid #e2e8f0';
+      document.getElementById('exam-mode-match-btn').style.background = mode === 'match' ? '#ef444415' : '#fff';
+      document.getElementById('exam-mode-match-btn').style.color = mode === 'match' ? '#ef4444' : '#64748b';
+
+      document.getElementById('exam-mode-exercises-btn').style.border = mode === 'exercises' ? '2px solid #ef4444' : '2px solid #e2e8f0';
+      document.getElementById('exam-mode-exercises-btn').style.background = mode === 'exercises' ? '#ef444415' : '#fff';
+      document.getElementById('exam-mode-exercises-btn').style.color = mode === 'exercises' ? '#ef4444' : '#64748b';
+
+      renderExamWindow();
+    }
+
+    function renderExamWindow() {
+      const win = document.getElementById('exam-mode-window');
+      if (currentExamMode === 'mcqs') {
+        win.innerHTML = `
+          <div class="cell-details-window">
+            <h3 style="font-family:'Outfit', sans-serif; font-size:22px; font-weight:900; color:#1e1b4b; margin-bottom:16px">NEET MCQs Practice</h3>
+            <p style="color:#64748b; margin-bottom:24px">Practice high-yield NEET multiple choice questions from Chapter 19.</p>
+            <div id="exam-mcq-container">
+              <button onclick="navigateTo('terminology'); switchLexiconTab('quiz')" style="padding:12px 28px; background:#ef4444; color:#fff; border:none; border-radius:100px; font-weight:800; cursor:pointer">Launch Interactive Quiz Mode 🧪</button>
+            </div>
+          </div>
+        `;
+      } else if (currentExamMode === 'blanks') {
+        renderInteractiveBlanksUI(win);
+      } else if (currentExamMode === 'match') {
+        renderInteractiveMatchUI(win);
+      } else {
+        win.innerHTML = `
+          <div class="cell-details-window">
+            <h3 style="font-family:'Outfit', sans-serif; font-size:22px; font-weight:900; color:#1e1b4b; margin-bottom:16px">NCERT Chapter 19 Exercises</h3>
+            <p style="color:#64748b; line-height:1.6">All textbook exercises are fully resolved in the <strong>Skills &amp; Mastery</strong> section under Section 'Exercises'.</p>
+            <button onclick="navigateTo('skills')" style="margin-top:16px; padding:10px 24px; background:var(--cell-indigo); color:#fff; border:none; border-radius:100px; font-weight:800; cursor:pointer">Open NCERT Exercises in Skills →</button>
+          </div>
+        `;
+      }
+    }
+
+    // -------------------------------------------------------------
+    // STUDENT INTERACTIVE FILL IN THE BLANKS ENGINE
+    // -------------------------------------------------------------
+    function renderInteractiveBlanksUI(container) {
+      container.innerHTML = `
+        <div class="cell-details-window">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:16px">
+            <div>
+              <h3 style="font-family:'Outfit', sans-serif; font-size:24px; font-weight:900; color:#1e1b4b; margin:0 0 4px">Interactive Fill in the Blanks</h3>
+              <p style="color:#64748b; font-size:14px; margin:0">Type your answers in the blank fields below. Instant feedback &amp; correct answers will be revealed upon checking!</p>
+            </div>
+            <div id="blanks-score-badge" style="background:rgba(79,70,229,0.1); border:1.5px solid rgba(79,70,229,0.2); padding:10px 20px; border-radius:100px; font-weight:900; color:var(--cell-indigo); font-size:16px">
+              Score: 0 / ${blanksQuestionsData.length}
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; margin-bottom:32px; flex-wrap:wrap">
+            <button onclick="checkAllBlanksAnswers()" style="padding:12px 24px; background:var(--cell-indigo); color:#fff; border:none; border-radius:100px; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(79,70,229,0.3)">Check All Answers ✓</button>
+            <button onclick="resetBlanksAnswers()" style="padding:12px 24px; background:#fff; color:#64748b; border:1.5px solid #e2e8f0; border-radius:100px; font-weight:800; cursor:pointer">Reset All 🔄</button>
+          </div>
+
+          <div style="display:grid; gap:20px">
+            ${blanksQuestionsData.map((q, idx) => `
+              <div id="blank-card-${q.id}" class="interactive-blank-box">
+                <div style="font-size:16px; font-weight:700; color:#0f172a; line-height:1.6">
+                  <span style="color:var(--cell-indigo); font-weight:900; margin-right:6px">${idx + 1}.</span> ${q.text}
+                </div>
+                
+                <div style="display:flex; align-items:center; gap:12px; margin-top:12px; flex-wrap:wrap">
+                  <input type="text" id="blank-input-${q.id}" class="blank-input-field" placeholder="Type your answer here..." onkeydown="if(event.key==='Enter') checkSingleBlankAnswer(${q.id})" />
+                  <button onclick="checkSingleBlankAnswer(${q.id})" style="padding:10px 18px; background:rgba(79,70,229,0.1); color:var(--cell-indigo); border:1px solid rgba(79,70,229,0.2); border-radius:10px; font-weight:800; cursor:pointer; font-size:13px">Submit</button>
+                  <span id="blank-status-${q.id}" style="font-weight:800; font-size:14px"></span>
+                </div>
+
+                <div id="blank-feedback-${q.id}" style="display:none; margin-top:14px; padding:12px 16px; border-radius:10px; font-size:14px; line-height:1.5">
+                  <!-- Dynamic Correct Answer Display -->
+                </div>
+              </div>
+            `).join('')}
+          </div>
+
+          <div style="margin-top:32px; text-align:center">
+            <button onclick="checkAllBlanksAnswers()" style="padding:14px 32px; background:var(--cell-indigo); color:#fff; border:none; border-radius:100px; font-weight:800; cursor:pointer; font-size:16px; box-shadow:0 4px 14px rgba(79,70,229,0.3)">Check &amp; Reveal All Answers ✓</button>
+          </div>
+        </div>
+      `;
+    }
+
+    function checkSingleBlankAnswer(id) {
+      const q = blanksQuestionsData.find(item => item.id === id);
+      if (!q) return;
+
+      const inputEl = document.getElementById(`blank-input-${id}`);
+      const boxEl = document.getElementById(`blank-card-${id}`);
+      const statusEl = document.getElementById(`blank-status-${id}`);
+      const feedbackEl = document.getElementById(`blank-feedback-${id}`);
+
+      const userVal = (inputEl.value || "").trim().toLowerCase();
+
+      if (!userVal) {
+        statusEl.innerHTML = `<span style="color:#eab308">⚠️ Please type an answer</span>`;
+        return;
+      }
+
+      const isCorrect = q.answers.some(ans => userVal.includes(ans.toLowerCase()) || ans.toLowerCase().includes(userVal));
+
+      if (isCorrect) {
+        boxEl.className = "interactive-blank-box correct-box";
+        inputEl.className = "blank-input-field correct-input";
+        statusEl.innerHTML = `<span style="color:var(--cell-success)">✓ Correct!</span>`;
+        feedbackEl.style.display = "block";
+        feedbackEl.style.background = "#ecfdf5";
+        feedbackEl.style.border = "1px solid #a7f3d0";
+        feedbackEl.style.color = "#065f46";
+        feedbackEl.innerHTML = `<strong>✓ Perfect!</strong> Correct Answer: <strong>${q.displayAnswer}</strong>`;
+      } else {
+        boxEl.className = "interactive-blank-box wrong-box";
+        inputEl.className = "blank-input-field wrong-input";
+        statusEl.innerHTML = `<span style="color:var(--cell-wrong)">✗ Incorrect</span>`;
+        feedbackEl.style.display = "block";
+        feedbackEl.style.background = "#fef2f2";
+        feedbackEl.style.border = "1px solid #fecaca";
+        feedbackEl.style.color = "#991b1b";
+        feedbackEl.innerHTML = `<strong>❌ Incorrect.</strong> Correct Answer: <strong style="text-decoration:underline; font-size:15px">${q.displayAnswer}</strong>`;
+      }
+
+      updateBlanksScoreBadge();
+    }
+
+    function checkAllBlanksAnswers() {
+      blanksQuestionsData.forEach(q => checkSingleBlankAnswer(q.id));
+    }
+
+    function resetBlanksAnswers() {
+      blanksQuestionsData.forEach(q => {
+        const inputEl = document.getElementById(`blank-input-${q.id}`);
+        const boxEl = document.getElementById(`blank-card-${q.id}`);
+        const statusEl = document.getElementById(`blank-status-${q.id}`);
+        const feedbackEl = document.getElementById(`blank-feedback-${q.id}`);
+
+        if (inputEl) { inputEl.value = ""; inputEl.className = "blank-input-field"; }
+        if (boxEl) { boxEl.className = "interactive-blank-box"; }
+        if (statusEl) { statusEl.innerHTML = ""; }
+        if (feedbackEl) { feedbackEl.style.display = "none"; feedbackEl.innerHTML = ""; }
+      });
+
+      const badge = document.getElementById('blanks-score-badge');
+      if (badge) badge.textContent = `Score: 0 / ${blanksQuestionsData.length}`;
+    }
+
+    function updateBlanksScoreBadge() {
+      let correctCount = 0;
+      blanksQuestionsData.forEach(q => {
+        const inputEl = document.getElementById(`blank-input-${q.id}`);
+        if (inputEl) {
+          const userVal = inputEl.value.trim().toLowerCase();
+          if (q.answers.some(ans => userVal.includes(ans.toLowerCase()) || ans.toLowerCase().includes(userVal))) {
+            correctCount++;
+          }
+        }
+      });
+
+      const badge = document.getElementById('blanks-score-badge');
+      if (badge) badge.textContent = `Score: ${correctCount} / ${blanksQuestionsData.length}`;
+    }
+
+    // -------------------------------------------------------------
+    // STUDENT INTERACTIVE MATCH THE FOLLOWING ENGINE
+    // -------------------------------------------------------------
+    function renderInteractiveMatchUI(container) {
+      container.innerHTML = `
+        <div class="cell-details-window">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; flex-wrap:wrap; gap:16px">
+            <div>
+              <h3 style="font-family:'Outfit', sans-serif; font-size:24px; font-weight:900; color:#1e1b4b; margin:0 0 4px">Interactive Match the Following</h3>
+              <p style="color:#64748b; font-size:14px; margin:0">Select the correct matching gland from Column II for each hormone in Column I. Incorrect matches will display the right answer!</p>
+            </div>
+            <div id="match-score-badge" style="background:rgba(13,148,136,0.1); border:1.5px solid rgba(13,148,136,0.2); padding:10px 20px; border-radius:100px; font-weight:900; color:var(--cell-teal); font-size:16px">
+              Score: 0 / ${matchItemsData.length}
+            </div>
+          </div>
+
+          <div style="display:flex; gap:12px; margin-bottom:32px; flex-wrap:wrap">
+            <button onclick="checkAllMatchAnswers()" style="padding:12px 24px; background:var(--cell-teal); color:#fff; border:none; border-radius:100px; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(13,148,136,0.3)">Verify Matches ✓</button>
+            <button onclick="resetMatchAnswers()" style="padding:12px 24px; background:#fff; color:#64748b; border:1.5px solid #e2e8f0; border-radius:100px; font-weight:800; cursor:pointer">Reset Matches 🔄</button>
+          </div>
+
+          <div style="display:grid; gap:16px">
+            ${matchItemsData.map((m, idx) => `
+              <div id="match-card-${m.id}" class="interactive-blank-box" style="margin-bottom:0">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px">
+                  <div style="font-size:16px; font-weight:800; color:#1e1b4b; flex:1; min-width:240px">
+                    ${m.item}
+                  </div>
+
+                  <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap">
+                    <select id="match-select-${m.id}" class="match-select-field" onchange="checkSingleMatchAnswer('${m.id}')">
+                      <option value="">-- Select Column II Gland --</option>
+                      ${matchOptionsList.map(opt => `<option value="${opt.val}">${opt.text}</option>`).join('')}
+                    </select>
+                    <span id="match-status-${m.id}" style="font-weight:800; font-size:14px"></span>
+                  </div>
+                </div>
+
+                <div id="match-feedback-${m.id}" style="display:none; margin-top:12px; padding:10px 16px; border-radius:100px; font-size:14px">
+                  <!-- Correct Match Display -->
+                </div>
+              </div>
+            `).join('')}
+          </div>
+
+          <div style="margin-top:32px; text-align:center">
+            <button onclick="checkAllMatchAnswers()" style="padding:14px 32px; background:var(--cell-teal); color:#fff; border:none; border-radius:100px; font-weight:800; cursor:pointer; font-size:16px; box-shadow:0 4px 14px rgba(13,148,136,0.3)">Verify All Matches ✓</button>
+          </div>
+        </div>
+      `;
+    }
+
+    function checkSingleMatchAnswer(id) {
+      const item = matchItemsData.find(m => m.id === id);
+      if (!item) return;
+
+      const selectEl = document.getElementById(`match-select-${id}`);
+      const boxEl = document.getElementById(`match-card-${id}`);
+      const statusEl = document.getElementById(`match-status-${id}`);
+      const feedbackEl = document.getElementById(`match-feedback-${id}`);
+
+      const userVal = selectEl.value;
+
+      if (!userVal) {
+        statusEl.innerHTML = `<span style="color:#eab308">⚠️ Select an option</span>`;
+        return;
+      }
+
+      if (userVal === item.correctVal) {
+        boxEl.className = "interactive-blank-box correct-box";
+        selectEl.className = "match-select-field correct-select";
+        statusEl.innerHTML = `<span style="color:var(--cell-success)">✓ Correct!</span>`;
+        feedbackEl.style.display = "block";
+        feedbackEl.style.background = "#ecfdf5";
+        feedbackEl.style.border = "1px solid #a7f3d0";
+        feedbackEl.style.color = "#065f46";
+        feedbackEl.innerHTML = `<strong>✓ Matched Correctly!</strong> Gland: <strong>${item.correctText}</strong>`;
+      } else {
+        boxEl.className = "interactive-blank-box wrong-box";
+        selectEl.className = "match-select-field wrong-select";
+        statusEl.innerHTML = `<span style="color:var(--cell-wrong)">✗ Incorrect</span>`;
+        feedbackEl.style.display = "block";
+        feedbackEl.style.background = "#fef2f2";
+        feedbackEl.style.border = "1px solid #fecaca";
+        feedbackEl.style.color = "#991b1b";
+        feedbackEl.innerHTML = `<strong>❌ Incorrect Match.</strong> Right Answer: <strong style="text-decoration:underline; font-size:15px">${item.correctText}</strong>`;
+      }
+
+      updateMatchScoreBadge();
+    }
+
+    function checkAllMatchAnswers() {
+      matchItemsData.forEach(m => checkSingleMatchAnswer(m.id));
+    }
+
+    function resetMatchAnswers() {
+      matchItemsData.forEach(m => {
+        const selectEl = document.getElementById(`match-select-${m.id}`);
+        const boxEl = document.getElementById(`match-card-${m.id}`);
+        const statusEl = document.getElementById(`match-status-${m.id}`);
+        const feedbackEl = document.getElementById(`match-feedback-${m.id}`);
+
+        if (selectEl) { selectEl.value = ""; selectEl.className = "match-select-field"; }
+        if (boxEl) { boxEl.className = "interactive-blank-box"; }
+        if (statusEl) { statusEl.innerHTML = ""; }
+        if (feedbackEl) { feedbackEl.style.display = "none"; feedbackEl.innerHTML = ""; }
+      });
+
+      const badge = document.getElementById('match-score-badge');
+      if (badge) badge.textContent = `Score: 0 / ${matchItemsData.length}`;
+    }
+
+    function updateMatchScoreBadge() {
+      let correctCount = 0;
+      matchItemsData.forEach(m => {
+        const selectEl = document.getElementById(`match-select-${m.id}`);
+        if (selectEl && selectEl.value === m.correctVal) {
+          correctCount++;
+        }
+      });
+
+      const badge = document.getElementById('match-score-badge');
+      if (badge) badge.textContent = `Score: ${correctCount} / ${matchItemsData.length}`;
+    }
+
+    // -------------------------------------------------------------
+    // INITIALIZATION BOOTSTRAP
+    // -------------------------------------------------------------
+    document.addEventListener("DOMContentLoaded", () => {
+      inspectGland('hypothalamus');
+      renderLexiconSidebar();
+      renderLexiconDetails();
+      renderCoreSkills();
+      switchExamMode('mcqs');
+
+      // Hash navigation check
+      const hash = window.location.hash.replace('#', '');
+      if (hash && document.getElementById('view-' + hash)) {
+        navigateTo(hash);
+      }
+    });
+  
+    // Image-reference UI initialization
+    renderCoreSkills();
+</script>
+</body>
+</html>
