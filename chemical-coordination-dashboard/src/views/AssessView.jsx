@@ -98,7 +98,7 @@ export default function AssessView({ selectedSkillIndex, navigateTo, onOpenAsses
           ) : (
             <div style={{ background: '#fff', borderRadius: '24px', padding: '40px', border: '1px solid #e2e8f0', boxShadow: 'var(--cell-sh)' }}>
               <div style={{ textAlign: 'center', marginBottom: '32px' }}>
-                <div style={{ fontSize: '64px', marginBottom: '8px' }}>ðŸ†</div>
+                <div style={{ fontSize: '64px', marginBottom: '8px' }}>🏆</div>
                 <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: '32px', fontWeight: 900, color: '#1e1b4b', margin: 0 }}>Assessment Results</h2>
                 {(() => {
                   let score = 0;
@@ -117,9 +117,9 @@ export default function AssessView({ selectedSkillIndex, navigateTo, onOpenAsses
                   const u = assessAnswers[i];
                   const ok = u === q.correct;
                   return (
-                    <div key={i} style={{ padding: '16px 20px', borderRadius: '14px', border: 1.5px solid , background: ok ? '#ecfdf5' : '#fef2f2' }}>
+                    <div key={i} style={{ padding: '16px 20px', borderRadius: '14px', border: ok ? '1.5px solid #a7f3d0' : '1.5px solid #fecaca', background: ok ? '#ecfdf5' : '#fef2f2' }}>
                       <b style={{ color: '#1e1b4b' }}>Q{i + 1}.</b> {q.question}<br />
-                      <span style={{ fontSize: '14px' }}>Your Answer: <strong>{u == null ? 'Not Answered' : q.options[u]}</strong> {ok ? 'âœ“' : ''}</span>
+                      <span style={{ fontSize: '14px' }}>Your Answer: <strong>{u == null ? 'Not Answered' : q.options[u]}</strong> {ok ? '✓' : ''}</span>
                       {!ok && <div style={{ fontSize: '14px', marginTop: '4px', color: '#991b1b' }}><b>Correct Answer:</b> {q.options[q.correct]}<br />{q.explanation}</div>}
                     </div>
                   );

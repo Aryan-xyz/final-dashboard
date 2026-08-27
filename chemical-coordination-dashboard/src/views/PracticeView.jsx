@@ -41,8 +41,8 @@ export default function PracticeView({ navigateTo }) {
             </div>
 
             {answered && (
-              <div style={{ background: ok ? '#ecfdf5' : '#fef2f2', border: 1px solid , borderRadius: '12px', padding: '16px', marginBottom: '24px', color: ok ? '#065f46' : '#991b1b' }}>
-                <b>{ok ? 'âœ“ Correct Answer' : 'âœ— Incorrect'}</b><br />
+              <div style={{ background: ok ? '#ecfdf5' : '#fef2f2', border: ok ? '1px solid #a7f3d0' : '1px solid #fecaca', borderRadius: '12px', padding: '16px', marginBottom: '24px', color: ok ? '#065f46' : '#991b1b' }}>
+                <b>{ok ? '✓ Correct Answer' : '✗ Incorrect'}</b><br />
                 Correct Answer: {String.fromCharCode(65 + q.correct)}. {q.options[q.correct]}<br />
                 {q.explanation}
               </div>
@@ -57,7 +57,7 @@ export default function PracticeView({ navigateTo }) {
                 disabled={!answered}
                 style={{ padding: '12px 28px', borderRadius: '100px', border: 'none', background: answered ? 'var(--cell-indigo)' : '#cbd5e1', color: '#fff', fontWeight: 800, cursor: answered ? 'pointer' : 'not-allowed' }}
               >
-                {practiceIndex === 14 ? 'Finish Practice' : 'Next Question â†’'}
+                {practiceIndex === 14 ? 'Finish Practice' : 'Next Question →'}
               </button>
             </div>
           </div>

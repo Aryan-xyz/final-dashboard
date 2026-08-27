@@ -22,16 +22,16 @@ export default function SkillsView({ currentView, navigateTo, onOpenLearn, onOpe
               return (
                 <div key={idx} className="core-skill-card" style={{ background: '#fff', borderRadius: '20px', padding: '24px', border: '1px solid #e2e8f0', boxShadow: 'var(--cell-sh)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                   <div style={{ display: 'flex', gap: '16px', marginBottom: '20px' }}>
-                    <div className="core-skill-icon" style={{ background: ${c}12, color: c, width: '48px', height: '48px', borderRadius: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px' }}>{icon}</div>
+                    <div className="core-skill-icon" style={{ background: `${c}12`, color: c, width: '48px', height: '48px', borderRadius: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px' }}>{icon}</div>
                     <div className="core-skill-main">
                       <h3 style={{ fontFamily: "'Outfit', sans-serif", fontSize: '18px', fontWeight: 800, color: '#1e1b4b', margin: '0 0 4px' }}>{sec.title}</h3>
                       <p style={{ fontSize: '13px', color: '#64748b', margin: 0 }}>{sec.subtitle}</p>
                     </div>
                   </div>
                   <div className="core-skill-actions" style={{ display: 'flex', gap: '8px' }}>
-                    <button type="button" onClick={() => onOpenLearn(idx)} style={{ flex: 1, padding: '8px 14px', borderRadius: '100px', border: '1px solid #e2e8f0', background: '#fff', fontWeight: 700, fontSize: '13px', cursor: 'pointer' }}>â–¤ Learn</button>
-                    <button type="button" onClick={() => onOpenPractice(idx)} style={{ flex: 1, padding: '8px 14px', borderRadius: '100px', border: '1px solid #e2e8f0', background: '#fff', fontWeight: 700, fontSize: '13px', cursor: 'pointer' }}>ðŸ–‰ Practice</button>
-                    <button type="button" className="assess" onClick={() => onOpenAssess(idx)} style={{ flex: 1, padding: '8px 14px', borderRadius: '100px', border: 'none', background: c, color: '#fff', fontWeight: 700, fontSize: '13px', cursor: 'pointer' }}>ðŸ† Assess</button>
+                    <button type="button" onClick={() => onOpenLearn(idx)} style={{ flex: 1, padding: '8px 14px', borderRadius: '100px', border: '1px solid #e2e8f0', background: '#fff', fontWeight: 700, fontSize: '13px', cursor: 'pointer' }}>📖 Learn</button>
+                    <button type="button" onClick={() => onOpenPractice(idx)} style={{ flex: 1, padding: '8px 14px', borderRadius: '100px', border: '1px solid #e2e8f0', background: '#fff', fontWeight: 700, fontSize: '13px', cursor: 'pointer' }}>✏️ Practice</button>
+                    <button type="button" className="assess" onClick={() => onOpenAssess(idx)} style={{ flex: 1, padding: '8px 14px', borderRadius: '100px', border: 'none', background: c, color: '#fff', fontWeight: 700, fontSize: '13px', cursor: 'pointer' }}>🏆 Assess</button>
                   </div>
                 </div>
               );

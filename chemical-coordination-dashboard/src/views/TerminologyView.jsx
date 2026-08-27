@@ -99,10 +99,10 @@ export default function TerminologyView({ currentView, navigateTo }) {
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px' }}>
                           <div>
                             <h4 style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1.5px', color: item.color, marginBottom: '12px', fontWeight: 800 }}>Examples &amp; NCERT Context</h4>
-                            <div style={{ background: item.color + '05', padding: '20px', borderRadius: '16px', border: 1px solid 15 }}>
+                            <div style={{ background: item.color + '05', padding: '20px', borderRadius: '16px', border: `1px solid ${item.color}15` }}>
                               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                                 {item.examples.map((ex, idx) => (
-                                  <div key={idx} style={{ background: '#fff', border: 1px solid 20, padding: '8px 12px', borderRadius: '8px', fontSize: '14px', fontWeight: 600 }}>{ex}</div>
+                                  <div key={idx} style={{ background: '#fff', border: `1px solid ${item.color}20`, padding: '8px 12px', borderRadius: '8px', fontSize: '14px', fontWeight: 600 }}>{ex}</div>
                                 ))}
                               </div>
                               <div style={{ marginTop: '14px', fontSize: '13px', color: 'var(--cell-muted)', fontStyle: 'italic', borderTop: '1px solid #e2e8f0', paddingTop: '12px' }}>{item.inUse}</div>
@@ -112,7 +112,7 @@ export default function TerminologyView({ currentView, navigateTo }) {
                             <h4 style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1.5px', color: 'var(--cell-indigo)', marginBottom: '12px', fontWeight: 800 }}>Pro Memory Tip</h4>
                             <div style={{ background: 'rgba(79, 70, 229, 0.05)', padding: '20px', borderRadius: '16px', border: '1px solid rgba(79, 70, 229, 0.1)' }}>
                               <p style={{ margin: 0, fontSize: '15px', color: 'var(--cell-muted)', lineHeight: 1.6 }}>
-                                <span style={{ fontWeight: 800, color: 'var(--cell-indigo)' }}>ðŸ’¡ Memory Hook: </span>{item.memory}
+                                <span style={{ fontWeight: 800, color: 'var(--cell-indigo)' }}>💡 Memory Hook: </span>{item.memory}
                               </p>
                             </div>
                           </div>
@@ -129,8 +129,7 @@ export default function TerminologyView({ currentView, navigateTo }) {
                           <div style={{ width: '56px', height: '56px', borderRadius: '16px', background: item.color + '15', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '24px', color: item.color, fontWeight: 900 }}>{item.emoji}</div>
                           <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: '26px', fontWeight: 900, color: item.color, margin: 0 }}>Rule {item.num}: {item.title}</h2>
                         </div>
-
-                        <div style={{ background: item.color + '08', padding: '20px 24px', borderRadius: '16px', borderLeft: 6px solid , marginBottom: '24px' }}>
+                        <div style={{ background: item.color + '08', padding: '20px 24px', borderRadius: '16px', borderLeft: `6px solid ${item.color}`, marginBottom: '24px' }}>
                           <p style={{ fontSize: '18px', fontWeight: 700, color: item.color, margin: 0 }}>{item.rule}</p>
                         </div>
 
@@ -151,7 +150,7 @@ export default function TerminologyView({ currentView, navigateTo }) {
                             <h4 style={{ textTransform: 'uppercase', fontSize: '11px', letterSpacing: '1.5px', color: 'var(--cell-teal)', marginBottom: '12px', fontWeight: 800 }}>NEET Question Trap</h4>
                             <div style={{ background: 'rgba(13, 148, 136, 0.05)', padding: '20px', borderRadius: '16px', border: '1px solid rgba(13, 148, 136, 0.1)' }}>
                               <p style={{ margin: 0, fontSize: '15px', color: 'var(--cell-muted)', lineHeight: 1.6 }}>
-                                <span style={{ fontWeight: 800, color: 'var(--cell-teal)' }}>âš ï¸ Warning: </span>{item.tip}
+                                <span style={{ fontWeight: 800, color: 'var(--cell-teal)' }}>⚠️ Warning: </span>{item.tip}
                               </p>
                             </div>
                           </div>
@@ -166,10 +165,10 @@ export default function TerminologyView({ currentView, navigateTo }) {
             <div style={{ background: '#fff', borderRadius: '24px', padding: '32px', border: '1px solid #e2e8f0', boxShadow: 'var(--cell-sh)', maxWidth: '720px', margin: '0 auto' }}>
               {quizIndex >= QUIZ_DATA.length ? (
                 <div style={{ textAlign: 'center', padding: '20px' }}>
-                  <div style={{ fontSize: '64px', marginBottom: '16px' }}>ðŸ†</div>
+                  <div style={{ fontSize: '64px', marginBottom: '16px' }}>🏆</div>
                   <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: '28px', fontWeight: 900, color: '#1e1b4b' }}>Quiz Completed!</h2>
                   <p style={{ fontSize: '18px', color: 'var(--cell-muted)', marginBottom: '24px' }}>Your final score: <strong style={{ color: 'var(--cell-indigo)' }}>{quizScore} / {QUIZ_DATA.length}</strong></p>
-                  <button onClick={handleResetQuiz} style={{ padding: '12px 28px', background: 'var(--cell-indigo)', color: '#fff', border: 'none', borderRadius: '100px', fontWeight: 800, cursor: 'pointer' }}>Try Again ðŸ”„</button>
+                  <button onClick={handleResetQuiz} style={{ padding: '12px 28px', background: 'var(--cell-indigo)', color: '#fff', border: 'none', borderRadius: '100px', fontWeight: 800, cursor: 'pointer' }}>Try Again 🔄</button>
                 </div>
               ) : (
                 (() => {
@@ -205,7 +204,7 @@ export default function TerminologyView({ currentView, navigateTo }) {
                             <p style={{ margin: 0, fontSize: '14px', color: '#334155', lineHeight: 1.6 }}><strong style={{ color: 'var(--cell-indigo)' }}>Explanation: </strong>{q.explanation}</p>
                           </div>
                           <div style={{ textAlign: 'right' }}>
-                            <button onClick={handleNextQuizQuestion} style={{ padding: '12px 28px', background: 'var(--cell-indigo)', color: '#fff', border: 'none', borderRadius: '100px', fontWeight: 800, cursor: 'pointer' }}>Next Question â†’</button>
+                            <button onClick={handleNextQuizQuestion} style={{ padding: '12px 28px', background: 'var(--cell-indigo)', color: '#fff', border: 'none', borderRadius: '100px', fontWeight: 800, cursor: 'pointer' }}>Next Question →</button>
                           </div>
                         </div>
                       )}
